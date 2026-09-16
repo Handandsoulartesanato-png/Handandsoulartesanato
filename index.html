@@ -204,31 +204,117 @@
 
         }
 
-        /* Movimento suave */
+        /* GIRAR A PEÇA COM O DEDO OU RATO */
 
-        #previewBrinco svg {
-            animation: flutuarPeca 4s ease-in-out infinite;
-        }
+let rotacaoX = 8;
+let rotacaoY = -15;
 
-        @keyframes flutuarPeca {
+let arrastando = false;
+let inicioX = 0;
+let inicioY = 0;
 
-            0%, 100% {
-                transform:
-                    rotateY(-12deg)
-                    rotateX(6deg)
-                    rotateZ(-2deg)
-                translateY(0);
-            }
+function aplicarRotacao() {
 
-            50% {
-                transform:
-                    rotateY(-7deg)
-                    rotateX(8deg)
-                    rotateZ(1deg)
-                translateY(-7px);
-            }
+    const svg =
+        document.querySelector("#previewBrinco svg");
 
-        }
+    if (!svg) return;
+
+    svg.style.transform =
+        `rotateX(${rotacaoX}deg)
+         rotateY(${rotacaoY}deg)`;
+
+}
+
+
+/* RATO */
+
+document.addEventListener("mousedown", function(e) {
+
+    const svg =
+        e.target.closest("#previewBrinco svg");
+
+    if (!svg) return;
+
+    arrastando = true;
+
+    inicioX = e.clientX;
+    inicioY = e.clientY;
+
+});
+
+
+document.addEventListener("mousemove", function(e) {
+
+    if (!arrastando) return;
+
+    const diferencaX =
+        e.clientX - inicioX;
+
+    const diferencaY =
+        e.clientY - inicioY;
+
+    rotacaoY += diferencaX * 0.6;
+    rotacaoX -= diferencaY * 0.4;
+
+    inicioX = e.clientX;
+    inicioY = e.clientY;
+
+    aplicarRotacao();
+
+});
+
+
+document.addEventListener("mouseup", function() {
+
+    arrastando = false;
+
+});
+
+
+/* TELEMÓVEL */
+
+document.addEventListener("touchstart", function(e) {
+
+    const svg =
+        e.target.closest("#previewBrinco svg");
+
+    if (!svg) return;
+
+    arrastando = true;
+
+    inicioX = e.touches[0].clientX;
+    inicioY = e.touches[0].clientY;
+
+}, { passive: true });
+
+
+document.addEventListener("touchmove", function(e) {
+
+    if (!arrastando) return;
+
+    const diferencaX =
+        e.touches[0].clientX - inicioX;
+
+    const diferencaY =
+        e.touches[0].clientY - inicioY;
+
+    rotacaoY += diferencaX * 0.6;
+    rotacaoX -= diferencaY * 0.4;
+
+    inicioX = e.touches[0].clientX;
+    inicioY = e.touches[0].clientY;
+
+    aplicarRotacao();
+
+}, { passive: true });
+
+
+document.addEventListener("touchend", function() {
+
+    arrastando = false;
+
+});
 
         /* RODAPÉ */
 
