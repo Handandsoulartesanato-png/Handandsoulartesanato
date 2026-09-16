@@ -3,231 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Hand & Soul Artesanato</title>
 
     <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
+            margin: 0;
             font-family: Georgia, serif;
             background: #f4eee5;
             color: #3d3028;
-            line-height: 1.6;
+            text-align: center;
         }
 
         header {
             background: #3d3028;
-            color: #f4eee5;
-            padding: 25px 20px;
-            text-align: center;
+            color: white;
+            padding: 25px 15px;
         }
 
         header h1 {
-            font-size: 32px;
-            letter-spacing: 2px;
+            margin: 0;
+            font-size: 30px;
         }
 
         header p {
-            margin-top: 5px;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        nav {
-            margin-top: 20px;
+            margin: 8px 0 20px;
         }
 
         nav a {
-            color: #f4eee5;
+            color: white;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 15px;
-        }
-
-        nav a:hover {
-            color: #d5b58c;
+            margin: 5px;
+            display: inline-block;
         }
 
         .hero {
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 20px;
+            padding: 90px 20px;
             background: #e7d7c5;
         }
 
-        .hero-content {
-            max-width: 700px;
-        }
-
         .hero h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero .magic {
-            font-size: 22px;
-            font-style: italic;
-            margin-bottom: 20px;
+            font-size: 40px;
         }
 
         .hero p {
-            font-size: 17px;
-            margin-bottom: 30px;
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 18px;
         }
 
-        .button {
+        .botao {
             display: inline-block;
             background: #3d3028;
-            color: #ffffff;
-            padding: 13px 28px;
+            color: white;
+            padding: 12px 25px;
             border-radius: 30px;
             text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #705747;
+            margin-top: 15px;
         }
 
         section {
             padding: 70px 20px;
-            text-align: center;
         }
 
-        section h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .intro {
-            max-width: 650px;
-            margin: 0 auto 40px;
-        }
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1000px;
+        .categorias {
+            max-width: 900px;
             margin: auto;
         }
 
-        .category {
-            background: #fffaf4;
-            padding: 35px 20px;
+        .categoria {
+            background: white;
+            padding: 25px;
+            margin: 15px 0;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
 
-        .category span {
-            font-size: 40px;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .category h3 {
-            margin-bottom: 8px;
-        }
-
-        .about {
+        .sobre {
             background: #ded0bd;
-        }
-
-        .about-content {
-            max-width: 750px;
-            margin: auto;
-        }
-
-        .custom {
-            background: #f4eee5;
         }
 
         footer {
             background: #3d3028;
-            color: #f4eee5;
-            text-align: center;
+            color: white;
             padding: 35px 20px;
         }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        @media (max-width: 700px) {
-
-            header h1 {
-                font-size: 26px;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 5px;
-            }
-
-            .hero h2 {
-                font-size: 36px;
-            }
-
-            .categories {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
     </style>
 </head>
 
 <body>
 
-    <header>
+<header>
+    <h1>Hand & Soul</h1>
+    <p>Artesanato feito à mão, com alma</p>
 
-        <h1>Hand & Soul</h1>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#pecas">Peças</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#personalizados">Personalizados</a>
+        <a href="#contactos">Contactos</a>
+    </nav>
+</header>
 
-        <p>Artesanato feito à mão, com alma</p>
+<section class="hero" id="inicio">
+    <h2>Hand & Soul Artesanato</h2>
 
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#pecas">Peças</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#personalizados">Personalizados</a>
-            <a href="#contactos">Contactos</a>
-        </nav>
+    <p>✨ Bem-vindo a este mundo mágico ✨</p>
 
-    </header>
+    <p>
+        Peças únicas, criadas à mão e com dedicação,
+        para pessoas que procuram algo diferente,
+        especial e cheio de personalidade.
+    </p>
 
-    <main>
+    <a class="botao" href="#pecas">Explorar peças</a>
+</section>
 
-        <section class="hero" id="inicio">
+<section id="pecas">
+    <h2>As nossas criações</h2>
 
-            <div class="hero-content">
+    <p>
+        Cada peça é criada à mão com cuidado,
+        criatividade e muita dedicação.
+    </p>
 
-                <h2>Hand & Soul Artesanato</h2>
+    <div class="categorias">
 
-                <p class="magic">
-                    ✨ Bem-vindo a este mundo mágico ✨
-                </p>
+        <div class="categoria">
+            <h3>🪷 Brincos</h3>
+            <p>Peças únicas e cheias de personalidade.</p>
+        </div>
 
-                <p>
-                    Peças únicas, criadas à mão e com dedicação,
-                    para pessoas que procuram algo diferente,
-                    especial e cheio de personalidade.
-                </p>
+        <div class="categoria">
+            <h3>📿 Colares</h3>
+            <p>Criações artesanais para completar o teu estilo.</p>
+        </div>
 
-                <a href="#pecas" class="button">
-                    Explorar peças
-                </a>
+        <div class="categoria">
+            <h3>✨ Pulseiras</h3>
+            <p>Detalhes feitos à mão para todos os momentos.</p>
+        </div>
 
-            </div>
+        <div class="categoria">
+            <h3>👜 Malas & Bolsas</h3>
+            <p>Peças originais e funcionais.</p>
+        </div>
 
-        </section>
+        <div class="categoria">
+            <h3>👝 Carteiras</h3>
+            <p>Pequenas criações feitas com muito cuidado.</p>
+        </div>
 
-        <section id="pecas">
+        <div class="categoria">
+            <h3>🌙 Peças Personalizadas</h3>
+            <p>Criações pensadas especialmente para ti.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="sobre" id="sobre">
+    <h2>Feito à mão. Feito com alma.</h2>
+
+    <p>
+        Na Hand & Soul acreditamos que cada peça tem uma história.
+    </p>
+
+    <p>
+        Criamos artesanalmente, fugindo à produção em massa
+        e valorizando a criatividade, a individualidade
+        e o trabalho manual.
+    </p>
+</section>
+
+<section id="personalizados">
+    <h2>Queres algo só teu?</h2>
+
+    <p>
+        Algumas peças podem ser personalizadas.
+        Escolhe cores, materiais e detalhes e vamos criar
+        algo pensado especialmente para ti.
+    </p>
+
+    <a class="botao" href="#contactos">Falar connosco</a>
+</section>
+
+<footer id="contactos">
+    <h2>Hand & Soul Artesanato</h2>
+    <p>Feito à mão • Único • Com alma</p>
+    <p>Instagram • Facebook</p>
+</footer>
+
+</body>
+</html>
