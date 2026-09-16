@@ -623,35 +623,59 @@ function atualizarResultado() {
 
         else if (formatoEscolhido === "Losango") {
 
-            preview.innerHTML = `
+    preview.innerHTML = `
 
-                <svg width="140"
-                     height="180"
-                     viewBox="0 0 140 180">
+        <svg width="160"
+             height="190"
+             viewBox="0 0 160 190">
 
-                    <circle
-                        cx="70"
-                        cy="25"
-                        r="10"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="5"/>
+            <!-- Aro -->
+            <circle
+                cx="80"
+                cy="25"
+                r="10"
+                fill="currentColor"
+                opacity="0.9"/>
 
-                    <path
-                        d="M70 45
-                           L40 90
-                           L70 145
-                           L100 90 Z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="7"/>
+            <circle
+                cx="80"
+                cy="25"
+                r="5"
+                fill="#ffffff"
+                opacity="0.45"/>
 
-                </svg>
+            <!-- Sombra do losango -->
+            <path
+                d="M82 48
+                   L48 96
+                   L82 153
+                   L116 96 Z"
+                fill="rgba(0,0,0,0.25)"
+                transform="translate(6 7)"/>
 
-            `;
+            <!-- Corpo do losango -->
+            <path
+                d="M80 45
+                   L46 93
+                   L80 150
+                   L114 93 Z"
+                fill="currentColor"/>
+
+            <!-- Brilho -->
+            <path
+                d="M70 68
+                   L58 91"
+                fill="none"
+                stroke="white"
+                stroke-width="5"
+                stroke-linecap="round"
+                opacity="0.45"/>
+
+        </svg>
+
+    `;
 
         }
-
 
         else if (formatoEscolhido === "Folha") {
 
