@@ -835,33 +835,68 @@ function atualizarResultado() {
 
         else if (formatoEscolhido === "Argola") {
 
-            preview.innerHTML = `
+    preview.innerHTML = `
 
-                <svg width="140"
-                     height="180"
-                     viewBox="0 0 140 180">
+        <svg width="170"
+             height="190"
+             viewBox="0 0 170 190">
 
-                    <circle
-                        cx="70"
-                        cy="25"
-                        r="10"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="5"/>
+            <!-- Aro superior -->
+            <circle
+                cx="85"
+                cy="25"
+                r="10"
+                fill="currentColor"
+                opacity="0.9"/>
 
-                    <circle
-                        cx="70"
-                        cy="100"
-                        r="48"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="9"/>
+            <circle
+                cx="85"
+                cy="25"
+                r="5"
+                fill="#ffffff"
+                opacity="0.45"/>
 
-                </svg>
+            <!-- Sombra da argola -->
+            <circle
+                cx="91"
+                cy="108"
+                r="52"
+                fill="none"
+                stroke="rgba(0,0,0,0.3)"
+                stroke-width="19"/>
 
-            `;
+            <!-- Corpo da argola -->
+            <circle
+                cx="85"
+                cy="100"
+                r="52"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="19"/>
 
-        }
+            <!-- Reflexo da argola -->
+            <path
+                d="M53 72
+                   C61 58 76 50 91 50"
+                fill="none"
+                stroke="white"
+                stroke-width="5"
+                stroke-linecap="round"
+                opacity="0.45"/>
+
+            <!-- Pequeno brilho -->
+            <circle
+                cx="52"
+                cy="73"
+                r="4"
+                fill="white"
+                opacity="0.5"/>
+
+        </svg>
+
+    `;
+
+    }
 
 
         preview.style.color =
