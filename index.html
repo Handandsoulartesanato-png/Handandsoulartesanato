@@ -679,31 +679,65 @@ function atualizarResultado() {
 
         else if (formatoEscolhido === "Folha") {
 
-            preview.innerHTML = `
+    preview.innerHTML = `
 
-                <svg width="140"
-                     height="180"
-                     viewBox="0 0 140 180">
+        <svg width="160"
+             height="190"
+             viewBox="0 0 160 190">
 
-                    <circle
-                        cx="70"
-                        cy="25"
-                        r="10"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="5"/>
+            <!-- Aro -->
+            <circle
+                cx="80"
+                cy="25"
+                r="10"
+                fill="currentColor"
+                opacity="0.9"/>
 
-                    <path
-                        d="M70 145
-                           C35 120 35 70 70 45
-                           C105 70 105 120 70 145 Z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="7"/>
+            <circle
+                cx="80"
+                cy="25"
+                r="5"
+                fill="#ffffff"
+                opacity="0.45"/>
 
-                </svg>
+            <!-- Sombra da folha -->
+            <path
+                d="M82 150
+                   C45 125 43 78 80 45
+                   C117 78 115 125 82 150 Z"
+                fill="rgba(0,0,0,0.25)"
+                transform="translate(6 7)"/>
 
-            `;
+            <!-- Corpo da folha -->
+            <path
+                d="M80 147
+                   C43 122 41 75 80 45
+                   C119 75 117 122 80 147 Z"
+                fill="currentColor"/>
+
+            <!-- Nervura central -->
+            <path
+                d="M80 55
+                   C78 80 78 112 80 138"
+                fill="none"
+                stroke="#ffffff"
+                stroke-width="4"
+                stroke-linecap="round"
+                opacity="0.4"/>
+
+            <!-- Brilho -->
+            <path
+                d="M68 70
+                   C60 83 61 98 66 108"
+                fill="none"
+                stroke="white"
+                stroke-width="5"
+                stroke-linecap="round"
+                opacity="0.4"/>
+
+        </svg>
+
+    `;
 
         }
 
