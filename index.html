@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Hand & Soul Artesanato</title>
 
     <style>
+
         body {
             margin: 0;
             font-family: Georgia, serif;
@@ -13,12 +15,18 @@
             color: #3d3028;
             text-align: center;
         }
-.logo {
-    width: 180px;
-    max-width: 80%;
-    height: auto;
-    margin-bottom: 10px;
-}
+
+        /* LOGÓTIPO */
+
+        .logo {
+            width: 180px;
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* CABEÇALHO */
+
         header {
             background: #3d3028;
             color: white;
@@ -41,6 +49,8 @@
             display: inline-block;
         }
 
+        /* HERO */
+
         .hero {
             padding: 90px 20px;
             background: #e7d7c5;
@@ -56,6 +66,8 @@
             font-size: 18px;
         }
 
+        /* BOTÕES */
+
         .botao {
             display: inline-block;
             background: #3d3028;
@@ -65,6 +77,8 @@
             text-decoration: none;
             margin-top: 15px;
         }
+
+        /* SECÇÕES */
 
         section {
             padding: 70px 20px;
@@ -86,14 +100,56 @@
             background: #ded0bd;
         }
 
-        footer {
+        /* CONFIGURADOR */
+
+        #personalizados {
+            background: #f4eee5;
+        }
+
+        .opcoes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 700px;
+            margin: 20px auto 40px;
+        }
+
+        .opcoes button {
+            background: white;
+            color: #3d3028;
+            border: 2px solid #3d3028;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .opcoes button:hover {
             background: #3d3028;
             color: white;
-            padding: 35px 20px;
-         /* Efeito 3D do configurador */
+            transform: scale(1.05);
+        }
+
+        .resultado {
+            background: white;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        /* PREVIEW 3D */
 
         #previewBrinco {
             perspective: 800px;
+            min-height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         #previewBrinco svg {
@@ -113,10 +169,12 @@
             filter:
                 drop-shadow(2px 2px 1px rgba(0,0,0,0.20))
                 drop-shadow(-1px -1px 1px rgba(255,255,255,0.55));
+
             animation: brilhoPeca 3s ease-in-out infinite;
         }
 
         @keyframes brilhoPeca {
+
             0%, 100% {
                 opacity: 0.82;
             }
@@ -124,302 +182,551 @@
             50% {
                 opacity: 1;
             }
+
         }
-      </style>
+
+        /* RODAPÉ */
+
+        footer {
+            background: #3d3028;
+            color: white;
+            padding: 35px 20px;
+        }
+
+    </style>
 </head>
 
 <body>
 
 <header>
-   <img src="./logo sem fundo .png" alt="Hand & Soul Artesanato" class="logo">
+
+    <img src="./logo sem fundo .png"
+         alt="Hand & Soul Artesanato"
+         class="logo">
+
     <p>Artesanato feito à mão, com alma</p>
 
     <nav>
+
         <a href="#inicio">Início</a>
+
         <a href="#pecas">Peças</a>
+
         <a href="#sobre">Sobre</a>
+
         <a href="#personalizados">Personalizados</a>
+
         <a href="#contactos">Contactos</a>
+
     </nav>
+
     <p>
-    🇵🇹 PT |
-    <a href="english.html">🇬🇧 EN</a>
+
+        🇵🇹 PT |
+
+        <a href="english.html">🇬🇧 EN</a>
+
     </p>
+
 </header>
 
+
+<!-- INÍCIO -->
+
 <section class="hero" id="inicio">
+
     <h2>Hand & Soul Artesanato</h2>
 
     <p>✨ Bem-vindo a este mundo mágico ✨</p>
 
     <p>
+
         Peças únicas, criadas à mão e com dedicação,
         para pessoas que procuram algo diferente,
         especial e cheio de personalidade.
+
     </p>
 
-    <a class="botao" href="#pecas">Explorar peças</a>
+    <a class="botao" href="#pecas">
+
+        Explorar peças
+
+    </a>
+
 </section>
 
+
+<!-- PEÇAS -->
+
 <section id="pecas">
+
     <h2>As nossas criações</h2>
 
     <p>
+
         Cada peça é criada à mão com cuidado,
         criatividade e muita dedicação.
+
     </p>
 
     <div class="categorias">
 
         <div class="categoria">
+
             <h3>🪷 Brincos</h3>
-            <p>Peças únicas e cheias de personalidade.</p>
+
+            <p>
+                Peças únicas e cheias de personalidade.
+            </p>
+
         </div>
 
+
         <div class="categoria">
+
             <h3>📿 Colares</h3>
-            <p>Criações artesanais para completar o teu estilo.</p>
+
+            <p>
+                Criações artesanais para completar o teu estilo.
+            </p>
+
         </div>
 
+
         <div class="categoria">
+
             <h3>✨ Pulseiras</h3>
-            <p>Detalhes feitos à mão para todos os momentos.</p>
+
+            <p>
+                Detalhes feitos à mão para todos os momentos.
+            </p>
+
         </div>
 
+
         <div class="categoria">
+
             <h3>👜 Malas & Bolsas</h3>
-            <p>Peças originais e funcionais.</p>
+
+            <p>
+                Peças originais e funcionais.
+            </p>
+
         </div>
 
+
         <div class="categoria">
+
             <h3>👝 Carteiras</h3>
-            <p>Pequenas criações feitas com muito cuidado.</p>
+
+            <p>
+                Pequenas criações feitas com muito cuidado.
+            </p>
+
         </div>
 
+
         <div class="categoria">
+
             <h3>🌙 Peças Personalizadas</h3>
-            <p>Criações pensadas especialmente para ti.</p>
+
+            <p>
+                Criações pensadas especialmente para ti.
+            </p>
+
         </div>
 
     </div>
+
 </section>
 
+
+<!-- SOBRE -->
+
 <section class="sobre" id="sobre">
+
     <h2>Feito à mão. Feito com alma.</h2>
 
     <p>
+
         Na Hand & Soul acreditamos que cada peça tem uma história.
+
     </p>
 
     <p>
+
         Criamos artesanalmente, fugindo à produção em massa
         e valorizando a criatividade, a individualidade
         e o trabalho manual.
+
     </p>
+
 </section>
+
+
+<!-- PERSONALIZADOR -->
 
 <section id="personalizados">
 
     <h2>✨ Cria os teus brincos ✨</h2>
 
     <p>
+
         Escolhe o formato e a cor e cria uma peça só tua.
+
     </p>
+
 
     <h3>1. Escolhe o formato</h3>
 
     <div class="opcoes">
 
-        <button onclick="escolherFormato('Gota')">💧 Gota</button>
+        <button onclick="escolherFormato('Gota')">
+            💧 Gota
+        </button>
 
-        <button onclick="escolherFormato('Losango')">♦️ Losango</button>
+        <button onclick="escolherFormato('Losango')">
+            ♦️ Losango
+        </button>
 
-        <button onclick="escolherFormato('Folha')">🍃 Folha</button>
+        <button onclick="escolherFormato('Folha')">
+            🍃 Folha
+        </button>
 
-        <button onclick="escolherFormato('Cobra')">🐍 Cobra</button>
+        <button onclick="escolherFormato('Cobra')">
+            🐍 Cobra
+        </button>
 
-        <button onclick="escolherFormato('Argola')">⭕ Argola</button>
+        <button onclick="escolherFormato('Argola')">
+            ⭕ Argola
+        </button>
 
     </div>
+
 
     <h3>2. Escolhe a cor</h3>
 
     <div class="opcoes">
 
-        <button onclick="escolherCor('Roxo')">💜 Roxo</button>
+        <button onclick="escolherCor('Roxo')">
+            💜 Roxo
+        </button>
 
-        <button onclick="escolherCor('Azul')">💙 Azul</button>
+        <button onclick="escolherCor('Azul')">
+            💙 Azul
+        </button>
 
-        <button onclick="escolherCor('Verde')">💚 Verde</button>
+        <button onclick="escolherCor('Verde')">
+            💚 Verde
+        </button>
 
-        <button onclick="escolherCor('Rosa')">🩷 Rosa</button>
+        <button onclick="escolherCor('Rosa')">
+            🩷 Rosa
+        </button>
 
-        <button onclick="escolherCor('Laranja')">🧡 Laranja</button>
+        <button onclick="escolherCor('Laranja')">
+            🧡 Laranja
+        </button>
 
     </div>
+
+
+    <!-- RESULTADO -->
 
     <div class="resultado">
 
-    <h3>A tua criação</h3>
+        <h3>A tua criação</h3>
 
-    <div id="previewBrinco" style="display:flex; justify-content:center; align-items:center; min-height:200px;">
+        <div id="previewBrinco">
+
+            <!-- O brinco aparece aqui -->
+
+        </div>
+
+        <p id="resultado">
+
+            Escolhe um formato e uma cor ✨
+
+        </p>
+
     </div>
 
-    <p id="resultado">
-        Escolhe um formato e uma cor ✨
-    </p>
-    </div>
 
     <a class="botao" href="#contactos">
+
         💌 Quero encomendar
+
     </a>
 
 </section>
 
+
+<!-- CONTACTOS -->
+
 <footer id="contactos">
+
     <h2>Hand & Soul Artesanato</h2>
-    <p>Feito à mão • Único • Com alma</p>
-    <p>Instagram • Facebook</p>
+
+    <p>
+        Feito à mão • Único • Com alma
+    </p>
+
+    <p>
+        Instagram • Facebook
+    </p>
+
 </footer>
+
 
 <script>
 
 let formatoEscolhido = "";
 let corEscolhida = "";
 
+
 function escolherFormato(formato) {
+
     formatoEscolhido = formato;
+
     atualizarResultado();
+
 }
 
+
 function escolherCor(cor) {
+
     corEscolhida = cor;
+
     atualizarResultado();
+
 }
+
 
 function atualizarResultado() {
 
-    const resultado = document.getElementById("resultado");
-    const preview = document.getElementById("previewBrinco");
+    const resultado =
+        document.getElementById("resultado");
+
+    const preview =
+        document.getElementById("previewBrinco");
+
 
     if (formatoEscolhido && corEscolhida) {
 
         resultado.innerHTML =
-            "✨ " + formatoEscolhido +
-            " em " + corEscolhida + " ✨";
+            "✨ " +
+            formatoEscolhido +
+            " em " +
+            corEscolhida +
+            " ✨";
+
 
         if (formatoEscolhido === "Gota") {
 
-    preview.innerHTML = `
-        <svg width="140" height="180" viewBox="0 0 140 180">
-            <circle cx="70" cy="25" r="10"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="5"/>
+            preview.innerHTML = `
 
-            <path d="M70 45
-                     C45 65 45 100 70 145
-                     C95 100 95 65 70 45 Z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="7"/>
-        </svg>
-    `;
+                <svg width="140"
+                     height="180"
+                     viewBox="0 0 140 180">
 
-} else if (formatoEscolhido === "Losango") {
+                    <circle
+                        cx="70"
+                        cy="25"
+                        r="10"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="5"/>
 
-    preview.innerHTML = `
-        <svg width="140" height="180" viewBox="0 0 140 180">
-            <circle cx="70" cy="25" r="10"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="5"/>
+                    <path
+                        d="M70 45
+                           C45 65 45 100 70 145
+                           C95 100 95 65 70 45 Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="7"/>
 
-            <path d="M70 45 L40 90 L70 145 L100 90 Z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="7"/>
-        </svg>
-    `;
+                </svg>
 
-} else if (formatoEscolhido === "Folha") {
+            `;
 
-    preview.innerHTML = `
-        <svg width="140" height="180" viewBox="0 0 140 180">
-            <circle cx="70" cy="25" r="10"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="5"/>
-
-            <path d="M70 145
-                     C35 120 35 70 70 45
-                     C105 70 105 120 70 145 Z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="7"/>
-        </svg>
-    `;
-
-} else if (formatoEscolhido === "Cobra") {
-
-    preview.innerHTML = `
-        <svg width="140" height="180" viewBox="0 0 140 180">
-            <circle cx="70" cy="25" r="10"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="5"/>
-
-            <path d="M70 45
-                     C35 65 105 80 70 100
-                     C35 120 105 135 70 155"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="9"
-                  stroke-linecap="round"/>
-        </svg>
-    `;
-
-} else if (formatoEscolhido === "Argola") {
-
-    preview.innerHTML = `
-        <svg width="140" height="180" viewBox="0 0 140 180">
-            <circle cx="70" cy="25" r="10"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="5"/>
-
-            <circle cx="70" cy="100" r="48"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="9"/>
-        </svg>
-    `;
         }
-        preview.style.color = obterCor(corEscolhida);
 
-    } else if (formatoEscolhido) {
 
-        resultado.innerHTML =
-            "💫 Formato escolhido: " + formatoEscolhido;
+        else if (formatoEscolhido === "Losango") {
 
-    } else if (corEscolhida) {
+            preview.innerHTML = `
 
-        resultado.innerHTML =
-            "🎨 Cor escolhida: " + corEscolhida;
+                <svg width="140"
+                     height="180"
+                     viewBox="0 0 140 180">
+
+                    <circle
+                        cx="70"
+                        cy="25"
+                        r="10"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="5"/>
+
+                    <path
+                        d="M70 45
+                           L40 90
+                           L70 145
+                           L100 90 Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="7"/>
+
+                </svg>
+
+            `;
+
+        }
+
+
+        else if (formatoEscolhido === "Folha") {
+
+            preview.innerHTML = `
+
+                <svg width="140"
+                     height="180"
+                     viewBox="0 0 140 180">
+
+                    <circle
+                        cx="70"
+                        cy="25"
+                        r="10"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="5"/>
+
+                    <path
+                        d="M70 145
+                           C35 120 35 70 70 45
+                           C105 70 105 120 70 145 Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="7"/>
+
+                </svg>
+
+            `;
+
+        }
+
+
+        else if (formatoEscolhido === "Cobra") {
+
+            preview.innerHTML = `
+
+                <svg width="140"
+                     height="180"
+                     viewBox="0 0 140 180">
+
+                    <circle
+                        cx="70"
+                        cy="25"
+                        r="10"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="5"/>
+
+                    <path
+                        d="M70 45
+                           C35 65 105 80 70 100
+                           C35 120 105 135 70 155"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="9"
+                        stroke-linecap="round"/>
+
+                </svg>
+
+            `;
+
+        }
+
+
+        else if (formatoEscolhido === "Argola") {
+
+            preview.innerHTML = `
+
+                <svg width="140"
+                     height="180"
+                     viewBox="0 0 140 180">
+
+                    <circle
+                        cx="70"
+                        cy="25"
+                        r="10"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="5"/>
+
+                    <circle
+                        cx="70"
+                        cy="100"
+                        r="48"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="9"/>
+
+                </svg>
+
+            `;
+
+        }
+
+
+        preview.style.color =
+            obterCor(corEscolhida);
+
     }
+
+
+    else if (formatoEscolhido) {
+
+        resultado.innerHTML =
+            "💫 Formato escolhido: " +
+            formatoEscolhido;
+
+    }
+
+
+    else if (corEscolhida) {
+
+        resultado.innerHTML =
+            "🎨 Cor escolhida: " +
+            corEscolhida;
+
+    }
+
 }
+
 
 function obterCor(cor) {
 
-    if (cor === "Roxo") return "#8e44ad";
-    if (cor === "Azul") return "#3498db";
-    if (cor === "Verde") return "#27ae60";
-    if (cor === "Rosa") return "#e98bb5";
-    if (cor === "Laranja") return "#e67e22";
+    if (cor === "Roxo")
+        return "#8e44ad";
+
+    if (cor === "Azul")
+        return "#3498db";
+
+    if (cor === "Verde")
+        return "#27ae60";
+
+    if (cor === "Rosa")
+        return "#e98bb5";
+
+    if (cor === "Laranja")
+        return "#e67e22";
 
     return "#3d3028";
+
 }
 
-
 </script>
+
+
+</body>
 </html>
