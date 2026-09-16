@@ -568,31 +568,55 @@ function atualizarResultado() {
 
         if (formatoEscolhido === "Gota") {
 
-            preview.innerHTML = `
+    preview.innerHTML = `
 
-                <svg width="140"
-                     height="180"
-                     viewBox="0 0 140 180">
+        <svg width="160"
+             height="190"
+             viewBox="0 0 160 190">
 
-                    <circle
-                        cx="70"
-                        cy="25"
-                        r="10"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="5"/>
+            <!-- Aro -->
+            <circle
+                cx="80"
+                cy="25"
+                r="10"
+                fill="currentColor"
+                opacity="0.9"/>
 
-                    <path
-                        d="M70 45
-                           C45 65 45 100 70 145
-                           C95 100 95 65 70 45 Z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="7"/>
+            <circle
+                cx="80"
+                cy="25"
+                r="5"
+                fill="#ffffff"
+                opacity="0.45"/>
 
-                </svg>
+            <!-- Sombra da gota -->
+            <path
+                d="M82 48
+                   C55 68 55 105 82 153
+                   C109 105 109 68 82 48 Z"
+                fill="rgba(0,0,0,0.25)"
+                transform="translate(6 7)"/>
 
-            `;
+            <!-- Corpo da gota -->
+            <path
+                d="M80 45
+                   C48 66 48 105 80 150
+                   C112 105 112 66 80 45 Z"
+                fill="currentColor"/>
+
+            <!-- Brilho -->
+            <path
+                d="M68 68
+                   C60 82 61 100 67 112"
+                fill="none"
+                stroke="white"
+                stroke-width="5"
+                stroke-linecap="round"
+                opacity="0.45"/>
+
+        </svg>
+
+    `;
 
         }
 
