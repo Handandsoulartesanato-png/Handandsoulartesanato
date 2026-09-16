@@ -122,6 +122,20 @@
     filter:
         drop-shadow(2px 2px 1px rgba(0,0,0,0.20))
         drop-shadow(-1px -1px 1px rgba(255,255,255,0.55));
+    #previewBrinco svg path,
+#previewBrinco svg circle {
+    animation: brilhoPeca 3s ease-in-out infinite;
+}
+
+@keyframes brilhoPeca {
+    0%, 100% {
+        opacity: 0.82;
+    }
+
+    50% {
+        opacity: 1;
+    }
+        }
             }
       </style>
 </head>
