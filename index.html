@@ -246,5 +246,49 @@
     <p>Instagram • Facebook</p>
 </footer>
 
-</body>
+</body><script>
+
+let formatoEscolhido = "";
+let corEscolhida = "";
+
+function escolherFormato(formato) {
+
+    formatoEscolhido = formato;
+
+    atualizarResultado();
+}
+
+function escolherCor(cor) {
+
+    corEscolhida = cor;
+
+    atualizarResultado();
+}
+
+function atualizarResultado() {
+
+    const resultado = document.getElementById("resultado");
+
+    if (formatoEscolhido && corEscolhida) {
+
+        resultado.innerHTML =
+            "✨ " + formatoEscolhido +
+            " em " + corEscolhida +
+            " ✨";
+
+    } else if (formatoEscolhido) {
+
+        resultado.innerHTML =
+            "💫 Formato escolhido: " + formatoEscolhido;
+
+    } else if (corEscolhida) {
+
+        resultado.innerHTML =
+            "🎨 Cor escolhida: " + corEscolhida;
+
+    }
+
+}
+
+</script>
 </html>
