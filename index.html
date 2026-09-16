@@ -204,27 +204,7 @@
 
         }
 
-        /* GIRAR A PEÇA COM O DEDO OU RATO */
-
-let rotacaoX = 8;
-let rotacaoY = -15;
-
-let arrastando = false;
-let inicioX = 0;
-let inicioY = 0;
-
-function aplicarRotacao() {
-
-    const svg =
-        document.querySelector("#previewBrinco svg");
-
-    if (!svg) return;
-
-    svg.style.transform =
-        `rotateX(${rotacaoX}deg)
-         rotateY(${rotacaoY}deg)`;
-
-}
+        
 
 
 /* RATO */
@@ -1031,6 +1011,116 @@ function obterCor(cor) {
     return "#3d3028";
 
 }
+    /* GIRAR A PEÇA COM O DEDO OU RATO */
+
+let rotacaoX = 8;
+let rotacaoY = -15;
+
+let arrastando = false;
+let inicioX = 0;
+let inicioY = 0;
+
+function aplicarRotacao() {
+
+    const svg =
+        document.querySelector("#previewBrinco svg");
+
+    if (!svg) return;
+
+    svg.style.transform =
+        `rotateX(${rotacaoX}deg)
+         rotateY(${rotacaoY}deg)`;
+}
+
+
+/* RATO */
+
+document.addEventListener("mousedown", function(e) {
+
+    const svg =
+        e.target.closest("#previewBrinco svg");
+
+    if (!svg) return;
+
+    arrastando = true;
+
+    inicioX = e.clientX;
+    inicioY = e.clientY;
+
+});
+
+
+document.addEventListener("mousemove", function(e) {
+
+    if (!arrastando) return;
+
+    const diferencaX =
+        e.clientX - inicioX;
+
+    const diferencaY =
+        e.clientY - inicioY;
+
+    rotacaoY += diferencaX * 0.6;
+    rotacaoX -= diferencaY * 0.4;
+
+    inicioX = e.clientX;
+    inicioY = e.clientY;
+
+    aplicarRotacao();
+
+});
+
+
+document.addEventListener("mouseup", function() {
+
+    arrastando = false;
+
+});
+
+
+/* TELEMÓVEL */
+
+document.addEventListener("touchstart", function(e) {
+
+    const svg =
+        e.target.closest("#previewBrinco svg");
+
+    if (!svg) return;
+
+    arrastando = true;
+
+    inicioX = e.touches[0].clientX;
+    inicioY = e.touches[0].clientY;
+
+}, { passive: true });
+
+
+document.addEventListener("touchmove", function(e) {
+
+    if (!arrastando) return;
+
+    const diferencaX =
+        e.touches[0].clientX - inicioX;
+
+    const diferencaY =
+        e.touches[0].clientY - inicioY;
+
+    rotacaoY += diferencaX * 0.6;
+    rotacaoX -= diferencaY * 0.4;
+
+    inicioX = e.touches[0].clientX;
+    inicioY = e.touches[0].clientY;
+
+    aplicarRotacao();
+
+}, { passive: true });
+
+
+document.addEventListener("touchend", function() {
+
+    arrastando = false;
+
+});
 
 </script>
 
