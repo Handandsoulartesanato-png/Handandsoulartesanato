@@ -142,11 +142,11 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
 
-        /* PREVIEW 3D */
+         /* PREVIEW 3D - PEÇA ARTESANAL */
 
         #previewBrinco {
-            perspective: 800px;
-            min-height: 220px;
+            perspective: 900px;
+            min-height: 240px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -154,24 +154,43 @@
 
         #previewBrinco svg {
             overflow: visible;
-            filter: drop-shadow(8px 12px 6px rgba(0,0,0,0.25));
-            transform: rotateY(-12deg) rotateX(5deg);
-            transition: transform 0.5s ease, filter 0.5s ease;
+            transform:
+                rotateY(-12deg)
+                rotateX(6deg)
+                rotateZ(-2deg);
+            transition:
+                transform 0.6s ease,
+                filter 0.6s ease;
+            filter:
+                drop-shadow(10px 14px 7px rgba(0,0,0,0.25));
         }
 
         #previewBrinco svg:hover {
-            transform: rotateY(12deg) rotateX(-5deg) scale(1.05);
-            filter: drop-shadow(12px 16px 8px rgba(0,0,0,0.30));
+            transform:
+                rotateY(14deg)
+                rotateX(-5deg)
+                rotateZ(2deg)
+                scale(1.08);
+
+            filter:
+                drop-shadow(14px 18px 9px rgba(0,0,0,0.30));
         }
+
+        /* Efeito de material / fio */
 
         #previewBrinco svg path,
         #previewBrinco svg circle {
+
+            stroke-width: 9px;
+
             filter:
-                drop-shadow(2px 2px 1px rgba(0,0,0,0.20))
-                drop-shadow(-1px -1px 1px rgba(255,255,255,0.55));
+                drop-shadow(3px 3px 2px rgba(0,0,0,0.28))
+                drop-shadow(-2px -2px 2px rgba(255,255,255,0.65));
 
             animation: brilhoPeca 3s ease-in-out infinite;
         }
+
+        /* Pequeno brilho de luz */
 
         @keyframes brilhoPeca {
 
@@ -181,6 +200,32 @@
 
             50% {
                 opacity: 1;
+            }
+
+        }
+
+        /* Movimento suave */
+
+        #previewBrinco svg {
+            animation: flutuarPeca 4s ease-in-out infinite;
+        }
+
+        @keyframes flutuarPeca {
+
+            0%, 100% {
+                transform:
+                    rotateY(-12deg)
+                    rotateX(6deg)
+                    rotateZ(-2deg)
+                translateY(0);
+            }
+
+            50% {
+                transform:
+                    rotateY(-7deg)
+                    rotateX(8deg)
+                    rotateZ(1deg)
+                translateY(-7px);
             }
 
         }
