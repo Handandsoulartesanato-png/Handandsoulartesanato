@@ -185,15 +185,59 @@
 </section>
 
 <section id="personalizados">
-    <h2>Queres algo só teu?</h2>
+
+    <h2>✨ Cria os teus brincos ✨</h2>
 
     <p>
-        Algumas peças podem ser personalizadas.
-        Escolhe cores, materiais e detalhes e vamos criar
-        algo pensado especialmente para ti.
+        Escolhe o formato e a cor e cria uma peça só tua.
     </p>
 
-    <a class="botao" href="#contactos">Falar connosco</a>
+    <h3>1. Escolhe o formato</h3>
+
+    <div class="opcoes">
+
+        <button onclick="escolherFormato('Gota')">💧 Gota</button>
+
+        <button onclick="escolherFormato('Losango')">♦️ Losango</button>
+
+        <button onclick="escolherFormato('Folha')">🍃 Folha</button>
+
+        <button onclick="escolherFormato('Cobra')">🐍 Cobra</button>
+
+        <button onclick="escolherFormato('Argola')">⭕ Argola</button>
+
+    </div>
+
+    <h3>2. Escolhe a cor</h3>
+
+    <div class="opcoes">
+
+        <button onclick="escolherCor('Roxo')">💜 Roxo</button>
+
+        <button onclick="escolherCor('Azul')">💙 Azul</button>
+
+        <button onclick="escolherCor('Verde')">💚 Verde</button>
+
+        <button onclick="escolherCor('Rosa')">🩷 Rosa</button>
+
+        <button onclick="escolherCor('Laranja')">🧡 Laranja</button>
+
+    </div>
+
+    <div class="resultado">
+
+        <h3>A tua criação</h3>
+
+        <p id="resultado">
+            Escolhe um formato e uma cor ✨
+        </p>
+
+    </div>
+
+    <a class="botao" href="#contactos">
+        💌 Quero encomendar
+    </a>
+
 </section>
 
 <footer id="contactos">
