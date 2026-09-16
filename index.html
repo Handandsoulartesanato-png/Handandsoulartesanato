@@ -272,7 +272,20 @@ function atualizarResultado() {
             "✨ " + formatoEscolhido +
             " em " + corEscolhida + " ✨";
 
-        preview.innerHTML = "💎";
+        preview.innerHTML = `
+    <svg width="140" height="180" viewBox="0 0 140 180">
+        <circle cx="70" cy="25" r="10"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="5"/>
+
+        <path d="M70 40 L45 85 L70 145 L95 85 Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="7"
+              stroke-linejoin="round"/>
+    </svg>
+`;
         preview.style.color = obterCor(corEscolhida);
 
     } else if (formatoEscolhido) {
