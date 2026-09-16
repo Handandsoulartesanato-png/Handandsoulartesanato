@@ -1,16 +1,203 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psy and Fly</title>
-</head>
 
-<body>
+    <title>Hand & Soul Artesanato</title>
 
-    <h1>Bem-vindo a este mundo mágico ✨</h1>
+    <meta name="description" content="Peças artesanais feitas à mão, criadas com dedicação, criatividade e alma.">
 
-    <p>Peças artesanais feitas à mão, uma a uma.</p>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-</body>
-</html>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f8f3ea;
+            color: #3f3a32;
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(248, 243, 234, 0.96);
+            border-bottom: 1px solid #ded5c7;
+            padding: 18px 7%;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #514b42;
+        }
+
+        .menu {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #514b42;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #967b57;
+        }
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background:
+                radial-gradient(circle at top left, #e9dfcf 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ded8c9 0%, transparent 35%),
+                #f8f3ea;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .small-title {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.75rem;
+            color: #967b57;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1.05;
+            font-weight: normal;
+            margin-bottom: 25px;
+            color: #40392f;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: auto;
+            font-size: 1.15rem;
+            color: #655e53;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 30px;
+            background: #514b42;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #806b4d;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            max-width: 650px;
+            margin: 0 auto 50px;
+            text-align: center;
+            color: #6d665b;
+        }
+
+        .categories {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .category {
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            background: #eee7da;
+            border: 1px solid #ded5c7;
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            background: #e8dfd0;
+        }
+
+        .category h3 {
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+
+        .about {
+            background: #e9e1d4;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            margin-bottom: 18px;
+            color: #5f594f;
+        }
+
+        .cta {
+            text-align: center;
+            background: #514b42;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width:
