@@ -460,13 +460,15 @@ document.addEventListener("touchmove", function(e) {
     transform: rotate(50deg) translateZ(8px);
 }
 
-/* MISSANGAS */
+/* ============================= */
+/* MISSANGAS — PADRÃO MANDALA */
+/* ============================= */
 
 .mandala-bead {
     position: absolute;
 
-    width: 9px;
-    height: 9px;
+    width: 8px;
+    height: 8px;
 
     border-radius: 50%;
 
@@ -474,57 +476,61 @@ document.addEventListener("touchmove", function(e) {
         radial-gradient(
             circle at 30% 25%,
             #ffffff 0%,
-            #f7ddd9 18%,
+            #f7ddd9 20%,
             #d9b6b4 55%,
-            #8f6c70 100%
+            #80666b 100%
         );
 
     box-shadow:
-        1px 2px 4px rgba(0,0,0,0.45);
+        1px 2px 3px rgba(0,0,0,0.45),
+        inset -1px -1px 2px rgba(0,0,0,0.25);
 
-    transform: translateZ(18px);
+    transform: translateZ(20px);
+
+    z-index: 10;
 }
 
+/* distribuição simétrica ao longo da mandala */
+
 .b1 {
-    top: 28px;
-    left: 42px;
+    top: 17px;
+    left: 53px;
 }
 
 .b2 {
-    top: 65px;
-    right: 26px;
+    top: 31px;
+    left: 94px;
 }
 
 .b3 {
-    bottom: 32px;
-    right: 35px;
+    top: 61px;
+    left: 119px;
 }
 
 .b4 {
-    bottom: 20px;
-    left: 58px;
+    top: 101px;
+    left: 119px;
 }
 
 .b5 {
-    bottom: 48px;
-    left: 20px;
+    top: 128px;
+    left: 94px;
 }
 
 .b6 {
-    top: 70px;
-    left: 22px;
+    top: 139px;
+    left: 53px;
 }
 
 .b7 {
-    top: 18px;
-    right: 43px;
+    top: 128px;
+    left: 27px;
 }
 
 .b8 {
-    bottom: 62px;
-    right: 10px;
+    top: 61px;
+    left: 2px;
 }
-
 /* PENDENTE CENTRAL */
 
 .mandala-pendant {
