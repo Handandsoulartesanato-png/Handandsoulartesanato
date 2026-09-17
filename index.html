@@ -320,7 +320,47 @@
     transform: translateY(-3px);
     background: #f8edf1;
         }
+.opcoes-brincos {
+    max-width: 800px;
+    margin: 35px auto 0;
+    padding: 35px;
+    background: white;
+    border-radius: 22px;
+    border: 1px solid #eaded7;
+    box-shadow: 0 8px 25px rgba(80, 50, 40, 0.07);
+}
 
+.opcoes-brincos h3 {
+    color: #6d4659;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.modelos-brincos {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+    );
+    gap: 15px;
+}
+
+.modelos-brincos button {
+    border: 1px solid #eaded7;
+    background: #fffaf7;
+    color: #6d4659;
+    padding: 18px 12px;
+    border-radius: 18px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modelos-brincos button:hover {
+    transform: translateY(-3px);
+    background: #f8edf1;
+}
     </style>
 
 </head>
