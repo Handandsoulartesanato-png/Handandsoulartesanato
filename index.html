@@ -434,81 +434,87 @@ document.addEventListener("touchmove", function(e) {
 
     opacity: 0.55;
 }
-
-/* NÓS */
+/* ============================= */
+/* NÓS — MANDALA */
+/* ============================= */
 
 .mandala-knot {
     position: absolute;
 
-    width: 22px;
-    height: 22px;
+    width: 13px;
+    height: 13px;
 
-    border-radius: 8px 13px 8px 13px;
+    border-radius: 50%;
 
     background:
-        linear-gradient(
-            135deg,
-            #c08aa6,
-            #49333f 55%,
-            #251c1a
+        radial-gradient(
+            circle at 30% 25%,
+            #e2b7ca 0%,
+            #9b627f 40%,
+            #49333f 75%,
+            #251c1a 100%
         );
 
-    border: 3px solid #33251f;
+    border: 2px solid #33251f;
 
     box-shadow:
-        2px 3px 4px rgba(0,0,0,0.35),
-        inset 1px 1px 2px rgba(255,255,255,0.4);
+        1px 2px 3px rgba(0,0,0,0.4),
+        inset 1px 1px 2px rgba(255,255,255,0.45);
 
     transform-style: preserve-3d;
+
+    z-index: 8;
 }
 
+/* distribuição simétrica */
+
 .k1 {
-    top: 8px;
-    left: 20px;
-    transform: rotate(30deg) translateZ(8px);
+    top: 13px;
+    left: 49px;
+    transform: translateZ(10px);
 }
 
 .k2 {
-    top: 35px;
-    right: 4px;
-    transform: rotate(60deg) translateZ(9px);
+    top: 27px;
+    left: 91px;
+    transform: translateZ(11px);
 }
 
 .k3 {
-    top: 72px;
-    right: -3px;
-    transform: rotate(20deg) translateZ(10px);
+    top: 60px;
+    left: 119px;
+    transform: translateZ(12px);
 }
 
 .k4 {
-    bottom: 30px;
-    right: 6px;
-    transform: rotate(55deg) translateZ(8px);
+    top: 101px;
+    left: 119px;
+    transform: translateZ(11px);
 }
 
 .k5 {
-    bottom: 5px;
-    right: 38px;
-    transform: rotate(20deg) translateZ(9px);
+    top: 130px;
+    left: 91px;
+    transform: translateZ(10px);
 }
 
 .k6 {
-    bottom: 0;
-    left: 63px;
-    transform: rotate(65deg) translateZ(10px);
+    top: 141px;
+    left: 49px;
+    transform: translateZ(11px);
 }
 
 .k7 {
-    bottom: 8px;
-    left: 25px;
-    transform: rotate(35deg) translateZ(8px);
+    top: 130px;
+    left: 19px;
+    transform: translateZ(10px);
 }
 
 .k8 {
-    top: 38px;
-    left: 0;
-    transform: rotate(50deg) translateZ(8px);
-}
+    top: 60px;
+    left: -1px;
+    transform: translateZ(12px);
+    }
 
 /* ============================= */
 /* MISSANGAS — PADRÃO MANDALA */
