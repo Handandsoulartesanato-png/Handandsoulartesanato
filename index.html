@@ -407,6 +407,10 @@
     background: linear-gradient(
     135deg,
     #ffffff55 0%,
+    var(--cor-gota, #6d4659) 35%,
+    color-mix(in srgb, var(--cor-gota, #6d4659) 60%, black) 100%
+);
+    #ffffff55 0%,
     #6d4659 35%,
     #4a2d3d 100%
 );
@@ -939,7 +943,7 @@ function selecionarModelo(modelo) {
 
     event.target.classList.add("selecionada");
     document.getElementById("gota-visual").style.background = cor;        
-
+    
     }
 </script>
 
