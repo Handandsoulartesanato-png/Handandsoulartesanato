@@ -1,39 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
+
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Hand & Soul Artesanato</title>
 
-
     <style>
 
-        /* =========================
-           BASE
-        ========================= */
-
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Georgia, serif;
-            background: #f4eee5;
-            color: #3d3028;
-            text-align: center;
+            padding: 0;
         }
 
-
-        /* =========================
-           LOGÓTIPO
-        ========================= */
-
-        .logo {
-            width: 180px;
-            max-width: 80%;
-            height: auto;
-            margin-bottom: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf7;
+            color: #3d3028;
+            line-height: 1.6;
         }
 
 
@@ -42,25 +28,33 @@
         ========================= */
 
         header {
-            background: #3d3028;
-            color: white;
-            padding: 25px 15px;
+            background: #fffaf7;
+            padding: 20px 30px;
+            text-align: center;
+            border-bottom: 1px solid #eaded7;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 30px;
+        .logo {
+            width: 180px;
+            max-width: 80%;
+            height: auto;
         }
 
-        header p {
-            margin: 8px 0 20px;
+
+        nav {
+            margin-top: 15px;
         }
 
         nav a {
-            color: white;
             text-decoration: none;
-            margin: 5px;
-            display: inline-block;
+            color: #5b4050;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
         }
 
 
@@ -69,33 +63,25 @@
         ========================= */
 
         .hero {
-            padding: 90px 20px;
-            background: #e7d7c5;
+            text-align: center;
+            padding: 70px 25px;
+            background: linear-gradient(
+                135deg,
+                #fffaf7,
+                #f7e9ee
+            );
         }
 
-        .hero h2 {
-            font-size: 40px;
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+            color: #6d4659;
         }
 
         .hero p {
-            max-width: 600px;
-            margin: 20px auto;
+            max-width: 650px;
+            margin: auto;
             font-size: 18px;
-        }
-
-
-        /* =========================
-           BOTÕES
-        ========================= */
-
-        .botao {
-            display: inline-block;
-            background: #3d3028;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            margin-top: 15px;
         }
 
 
@@ -104,7 +90,22 @@
         ========================= */
 
         section {
-            padding: 70px 20px;
+            padding: 60px 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #6d4659;
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 35px;
         }
 
 
@@ -113,15 +114,28 @@
         ========================= */
 
         .categorias {
-            max-width: 900px;
-            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(150px, 1fr)
+            );
+            gap: 18px;
         }
 
         .categoria {
             background: white;
-            padding: 25px;
-            margin: 15px 0;
-            border-radius: 15px;
+            border: 1px solid #eaded7;
+            border-radius: 18px;
+            padding: 25px 15px;
+            text-align: center;
+            font-size: 17px;
+            box-shadow: 0 5px 15px rgba(80, 50, 40, 0.06);
+        }
+
+        .categoria span {
+            display: block;
+            font-size: 35px;
+            margin-bottom: 10px;
         }
 
 
@@ -130,76 +144,33 @@
         ========================= */
 
         .sobre {
-            background: #ded0bd;
+            background: #f8edf1;
+            max-width: none;
+            text-align: center;
+        }
+
+        .sobre-conteudo {
+            max-width: 750px;
+            margin: auto;
         }
 
 
         /* =========================
-           PERSONALIZADOR
+           PERSONALIZAÇÃO
         ========================= */
 
-        #personalizados {
-            background: #f4eee5;
+        .personalizacao {
+            text-align: center;
         }
 
-
-        .opcoes {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
+        .personalizacao-caixa {
             max-width: 700px;
-            margin: 20px auto 40px;
-        }
-
-
-        .opcoes button {
+            margin: auto;
+            padding: 35px;
             background: white;
-            color: #3d3028;
-            border: 2px solid #3d3028;
-            padding: 12px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-family: Georgia, serif;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-
-        .opcoes button:hover {
-            background: #3d3028;
-            color: white;
-            transform: scale(1.05);
-        }
-
-
-        /* =========================
-           RESULTADO
-        ========================= */
-
-        .resultado {
-            background: white;
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow:
-                0 8px 25px rgba(0,0,0,0.12);
-        }
-
-
-        /* =========================
-           PREVIEW
-        ========================= */
-
-        #previewBrinco {
-            min-height: 240px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            perspective: 900px;
+            border-radius: 22px;
+            border: 1px solid #eaded7;
+            box-shadow: 0 8px 25px rgba(80, 50, 40, 0.07);
         }
 
 
@@ -208,9 +179,11 @@
         ========================= */
 
         footer {
+            text-align: center;
+            padding: 30px 20px;
             background: #3d3028;
             color: white;
-            padding: 35px 20px;
+            margin-top: 30px;
         }
 
     </style>
@@ -233,45 +206,17 @@
             class="logo"
         >
 
-        <p>
-            Artesanato feito à mão, com alma
-        </p>
-
-
         <nav>
 
-            <a href="#inicio">
-                Início
-            </a>
+            <a href="#inicio">Início</a>
 
-            <a href="#pecas">
-                Peças
-            </a>
+            <a href="#pecas">Peças</a>
 
-            <a href="#sobre">
-                Sobre
-            </a>
+            <a href="#sobre">Sobre nós</a>
 
-            <a href="#personalizados">
-                Personalizados
-            </a>
-
-            <a href="#contactos">
-                Contactos
-            </a>
+            <a href="#personalizacao">Personaliza</a>
 
         </nav>
-
-
-        <p>
-
-            🇵🇹 PT |
-
-            <a href="english.html">
-                🇬🇧 EN
-            </a>
-
-        </p>
 
     </header>
 
@@ -281,557 +226,203 @@
          INÍCIO
     ========================= -->
 
-    <section
-        class="hero"
-        id="inicio"
-    >
+    <main>
 
-        <h2>
-            Hand & Soul Artesanato
-        </h2>
-
-
-        <p>
-            ✨ Bem-vindo a este mundo mágico ✨
-        </p>
-
-
-        <p>
-
-            Peças únicas, criadas à mão e com dedicação,
-            para pessoas que procuram algo diferente,
-            especial e cheio de personalidade.
-
-        </p>
-
-
-        <a
-            class="botao"
-            href="#pecas"
+        <section
+            id="inicio"
+            class="hero"
         >
-            Explorar peças
-        </a>
 
-    </section>
+            <h1>
+                Hand & Soul Artesanato
+            </h1>
 
+            <p>
+                Peças feitas à mão, com alma,
+                criatividade e atenção a cada detalhe.
+            </p>
 
-
-    <!-- =========================
-         PEÇAS
-    ========================= -->
-
-    <section id="pecas">
-
-        <h2>
-            As nossas criações
-        </h2>
+        </section>
 
 
-        <p>
 
-            Cada peça é criada à mão com cuidado,
-            criatividade e muita dedicação.
+        <!-- =========================
+             PEÇAS
+        ========================= -->
 
-        </p>
+        <section id="pecas">
+
+            <h2>
+                As nossas peças
+            </h2>
+
+            <p class="section-intro">
+                Criações artesanais feitas para quem
+                procura peças diferentes, únicas e
+                cheias de personalidade.
+            </p>
 
 
-        <div class="categorias">
+            <div class="categorias">
 
 
-            <div class="categoria">
+                <div class="categoria">
 
-                <h3>
-                    🪷 Brincos
-                </h3>
+                    <span>🪷</span>
+
+                    Brincos
+
+                </div>
+
+
+                <div class="categoria">
+
+                    <span>📿</span>
+
+                    Colares
+
+                </div>
+
+
+                <div class="categoria">
+
+                    <span>✨</span>
+
+                    Pulseiras
+
+                </div>
+
+
+                <div class="categoria">
+
+                    <span>👜</span>
+
+                    Malas & Bolsas
+
+                </div>
+
+
+                <div class="categoria">
+
+                    <span>👝</span>
+
+                    Carteiras
+
+                </div>
+
+
+                <div class="categoria">
+
+                    <span>🌙</span>
+
+                    Peças Personalizadas
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SOBRE NÓS
+        ========================= -->
+
+        <section
+            id="sobre"
+            class="sobre"
+        >
+
+            <div class="sobre-conteudo">
+
+                <h2>
+                    Sobre nós
+                </h2>
 
                 <p>
-                    Peças únicas e cheias de personalidade.
+                    Na Hand & Soul Artesanato,
+                    cada peça nasce de um processo
+                    criativo feito à mão.
+                </p>
+
+                <br>
+
+                <p>
+                    Valorizamos a criatividade,
+                    a personalização e a beleza
+                    das peças que fogem ao comum.
+                </p>
+
+                <br>
+
+                <p>
+                    Porque acreditamos que aquilo
+                    que usamos também pode contar
+                    um pouco da nossa história.
                 </p>
 
             </div>
 
+        </section>
 
-            <div class="categoria">
 
-                <h3>
-                    📿 Colares
-                </h3>
 
-                <p>
-                    Criações artesanais para completar o teu estilo.
-                </p>
+        <!-- =========================
+             PERSONALIZAÇÃO
+        ========================= -->
 
-            </div>
+        <section
+            id="personalizacao"
+            class="personalizacao"
+        >
 
+            <h2>
+                Cria a tua peça
+            </h2>
 
-            <div class="categoria">
+            <p class="section-intro">
 
-                <h3>
-                    ✨ Pulseiras
-                </h3>
-
-                <p>
-                    Detalhes feitos à mão para todos os momentos.
-                </p>
-
-            </div>
-
-
-            <div class="categoria">
-
-                <h3>
-                    👜 Malas & Bolsas
-                </h3>
-
-                <p>
-                    Peças originais e funcionais.
-                </p>
-
-            </div>
-
-
-            <div class="categoria">
-
-                <h3>
-                    👝 Carteiras
-                </h3>
-
-                <p>
-                    Pequenas criações feitas com muito cuidado.
-                </p>
-
-            </div>
-
-
-            <div class="categoria">
-
-                <h3>
-                    🌙 Peças Personalizadas
-                </h3>
-
-                <p>
-                    Criações pensadas especialmente para ti.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         SOBRE
-    ========================= -->
-
-    <section
-        class="sobre"
-        id="sobre"
-    >
-
-        <h2>
-            Feito à mão. Feito com alma.
-        </h2>
-
-
-        <p>
-            Na Hand & Soul acreditamos que cada peça tem uma história.
-        </p>
-
-
-        <p>
-
-            Criamos artesanalmente, fugindo à produção em massa
-            e valorizando a criatividade, a individualidade
-            e o trabalho manual.
-
-        </p>
-
-    </section>
-
-
-
-    <!-- =========================
-         PERSONALIZADOR
-    ========================= -->
-
-    <section id="personalizados">
-
-
-        <h2>
-            ✨ Cria os teus brincos ✨
-        </h2>
-
-
-        <p>
-
-            Escolhe o formato e a cor
-            e cria uma peça só tua.
-
-        </p>
-
-
-        <h3>
-            1. Escolhe o formato
-        </h3>
-
-
-        <div class="opcoes">
-
-            <button
-                onclick="escolherFormato('Gota')"
-            >
-                💧 Gota
-            </button>
-
-
-            <button
-                onclick="escolherFormato('Losango')"
-            >
-                ♦️ Losango
-            </button>
-
-
-            <button
-                onclick="escolherFormato('Folha')"
-            >
-                🍃 Folha
-            </button>
-
-
-            <button
-                onclick="escolherFormato('Cobra')"
-            >
-                🐍 Cobra
-            </button>
-
-
-            <button
-                onclick="escolherFormato('Argola')"
-            >
-                ⭕ Argola
-            </button>
-
-
-            <button
-                onclick="escolherFormato('Argola Mandala')"
-            >
-                🪷 Argola Mandala
-            </button>
-
-        </div>
-
-
-
-        <h3>
-            2. Escolhe a cor
-        </h3>
-
-
-        <div class="opcoes">
-
-
-            <button
-                onclick="escolherCor('Roxo')"
-            >
-                💜 Roxo
-            </button>
-
-
-            <button
-                onclick="escolherCor('Azul')"
-            >
-                💙 Azul
-            </button>
-
-
-            <button
-                onclick="escolherCor('Verde')"
-            >
-                💚 Verde
-            </button>
-
-
-            <button
-                onclick="escolherCor('Rosa')"
-            >
-                🩷 Rosa
-            </button>
-
-
-            <button
-                onclick="escolherCor('Laranja')"
-            >
-                🧡 Laranja
-            </button>
-
-
-        </div>
-
-
-
-        <!-- RESULTADO -->
-
-        <div class="resultado">
-
-
-            <h3>
-                A tua criação
-            </h3>
-
-
-            <div id="previewBrinco">
-
-                <!--
-                    OS MODELOS 3D
-                    VÃO ENTRAR AQUI
-                -->
-
-            </div>
-
-
-            <p id="resultado">
-
-                Escolhe um formato e uma cor ✨
+                Escolhe uma peça, combina cores
+                e cria algo com a tua personalidade.
 
             </p>
 
 
-        </div>
+            <div class="personalizacao-caixa">
+
+                <p>
+                    ✨ Em breve poderás
+                    personalizar a tua própria peça.
+                </p>
+
+            </div>
+
+        </section>
 
 
-
-        <a
-            class="botao"
-            href="#contactos"
-        >
-            💌 Quero encomendar
-        </a>
-
-
-    </section>
+    </main>
 
 
 
     <!-- =========================
-         CONTACTOS
+         RODAPÉ
     ========================= -->
 
-    <footer id="contactos">
-
-        <h2>
-            Hand & Soul Artesanato
-        </h2>
-
+    <footer>
 
         <p>
-            Feito à mão • Único • Com alma
+            Hand & Soul Artesanato
         </p>
 
-
         <p>
-            Instagram • Facebook
+            Feito à mão com alma ✨
         </p>
 
     </footer>
 
 
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
-
-    <script>
-
-        let formatoEscolhido = "";
-        let corEscolhida = "";
-
-
-        function escolherFormato(formato) {
-
-            formatoEscolhido = formato;
-
-            atualizarResultado();
-
-        }
-
-
-        function escolherCor(cor) {
-
-            corEscolhida = cor;
-
-            atualizarResultado();
-
-        }
-
-
-        function atualizarResultado() {
-
-            const resultado =
-                document.getElementById("resultado");
-
-            const preview =
-                document.getElementById("previewBrinco");
-
-
-            if (
-                formatoEscolhido &&
-                corEscolhida
-            ) {
-
-                resultado.innerHTML =
-                    "✨ " +
-                    formatoEscolhido +
-                    " em " +
-                    corEscolhida +
-                    " ✨";
-
-
-        /* =========================
-   MODELO — GOTA
-========================= */
-
-
-    if (formatoEscolhido === "Gota") {
-
-    preview.innerHTML = `
-
-        <svg
-            width="180"
-            height="230"
-            viewBox="0 0 180 230"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-
-            <!-- GANCHO -->
-
-            <circle
-                cx="90"
-                cy="22"
-                r="9"
-                fill="${obterCor(corEscolhida)}"
-                stroke="#3d3028"
-                stroke-width="2"
-            />
-
-            <circle
-                cx="90"
-                cy="22"
-                r="4"
-                fill="white"
-                opacity="0.45"
-            />
-
-
-            <!-- CORPO DA GOTA -->
-
-            <path
-                d="
-                    M90 48
-                    C58 48 35 75 35 112
-                    C35 153 60 190 90 210
-                    C120 190 145 153 145 112
-                    C145 75 122 48 90 48
-                    Z
-                "
-                fill="${obterCor(corEscolhida)}"
-                stroke="#3d3028"
-                stroke-width="5"
-            />
-
-
-            <!-- BRILHO -->
-
-            <path
-                d="
-                    M65 75
-                    C53 90 50 108 54 124
-                "
-                fill="none"
-                stroke="white"
-                stroke-width="8"
-                stroke-linecap="round"
-                opacity="0.45"
-            />
-
-
-            <!-- SOMBRA -->
-
-            <path
-                d="
-                    M124 78
-                    C137 100 136 126 126 148
-                    C118 166 106 182 94 192
-                "
-                fill="none"
-                stroke="#000000"
-                stroke-width="8"
-                stroke-linecap="round"
-                opacity="0.18"
-            />
-
-        </svg>
-
-    `;
-
-}            
-
-
-
-            else if (formatoEscolhido) {
-
-                resultado.innerHTML =
-                    "✨ Formato escolhido: " +
-                    formatoEscolhido;
-
-            }
-
-
-            else if (corEscolhida) {
-
-                resultado.innerHTML =
-                    "🎨 Cor escolhida: " +
-                    corEscolhida;
-
-            }
-
-
-            else {
-
-                resultado.innerHTML =
-                    "Escolhe um formato e uma cor ✨";
-
-            }
-
-        }
-function obterCor(cor) {
-
-    if (cor === "Roxo") {
-        return "#8e44ad";
-    }
-
-    if (cor === "Azul") {
-        return "#3498db";
-    }
-
-    if (cor === "Verde") {
-        return "#27ae60";
-    }
-
-    if (cor === "Rosa") {
-        return "#e98bb5";
-    }
-
-    if (cor === "Laranja") {
-        return "#e67e22";
-    }
-
-    return "#8e44ad";
-                    }
-    </script>
-
-
 </body>
-</html>
+
+            </html>
