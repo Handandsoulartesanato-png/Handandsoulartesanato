@@ -355,6 +355,26 @@ document.addEventListener("touchmove", function(e) {
         rotateX(4deg)
         rotateY(-7deg);
 }
+    .mandala-hoop::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.32);
+
+    box-shadow:
+        inset 1px 1px 2px rgba(255,255,255,0.35),
+        inset -1px -1px 2px rgba(0,0,0,0.25);
+
+    pointer-events: none;
+
+    transform:
+        translateZ(4px);
+    }
 
 /* ============================= */
 /* CAMADAS DE FIO — MANDALA */
