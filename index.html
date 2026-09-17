@@ -1158,8 +1158,18 @@ gota3D.addEventListener("pointermove", function(event) {
 
     rotacaoY += movimento * 0.5;
 
-    gota3D.style.transform =
-        "perspective(500px) rotateY(" + rotacaoY + "deg)";
+const angulo = rotacaoY * Math.PI / 180;
+const profundidade = Math.max(
+    0.22,
+    Math.abs(Math.cos(angulo))
+);
+
+gota3D.style.transform =
+    "perspective(500px) rotateY(" +
+    rotacaoY +
+    "deg) scaleX(" +
+    profundidade +
+    ")";
 
     inicioX = event.clientX;
 
