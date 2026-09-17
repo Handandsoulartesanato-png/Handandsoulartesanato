@@ -1593,7 +1593,29 @@ else if (formatoEscolhido === "Argola Mandala") {
     `;
 
 }
+        const mandala =
+            preview.querySelector(".earring-3d");
 
+        if (mandala && corEscolhida) {
+
+            const cores =
+                obterCoresMandala(corEscolhida);
+
+            mandala.style.setProperty(
+                "--cor-mandala",
+                cores.base
+            );
+
+            mandala.style.setProperty(
+                "--cor-mandala-clara",
+                cores.clara
+            );
+
+            mandala.style.setProperty(
+                "--cor-mandala-escura",
+                cores.escura
+            );
+    }
         preview.style.color =
             obterCor(corEscolhida);
 
