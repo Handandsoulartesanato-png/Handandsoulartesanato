@@ -432,9 +432,11 @@
     var(--cor-gota, #6d4659) 35%,
     color-mix(in srgb, var(--cor-gota, #6d4659) 60%, black) 100%
 );
-    #ffffff55 0%,
-    #6d4659 35%,
-    #4a2d3d 100%
+        position: relative;
+    transform: perspective(500px) rotateY(-8deg);
+    box-shadow:
+        8px 10px 12px rgba(50, 30, 30, 0.25),
+        inset -6px -8px 10px rgba(0, 0, 0, 0.18);
 );
     clip-path: polygon(
         50% 0%,
