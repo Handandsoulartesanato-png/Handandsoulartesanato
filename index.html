@@ -1045,6 +1045,22 @@ function selecionarModelo(modelo) {
     document.getElementById("gota-visual").style.background = cor;        
     
     }
+    function escolherTamanho(largura, altura, botao) {
+
+    const gota = document.getElementById("gota-visual");
+
+    gota.style.width = largura + "px";
+    gota.style.height = altura + "px";
+
+    const botoes = document.querySelectorAll(".tamanhos button");
+
+    botoes.forEach(function(botao) {
+        botao.classList.remove("selecionado");
+    });
+
+    botao.classList.add("selecionado");
+
+    }
 </script>
 
 </body>
