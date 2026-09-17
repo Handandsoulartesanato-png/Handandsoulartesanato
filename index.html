@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Hand & Soul Artesanato</title>
 
+
     <style>
+
+        /* =========================
+           BASE
+        ========================= */
 
         body {
             margin: 0;
@@ -16,7 +24,10 @@
             text-align: center;
         }
 
-        /* LOGÓTIPO */
+
+        /* =========================
+           LOGÓTIPO
+        ========================= */
 
         .logo {
             width: 180px;
@@ -25,7 +36,10 @@
             margin-bottom: 10px;
         }
 
-        /* CABEÇALHO */
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
 
         header {
             background: #3d3028;
@@ -49,7 +63,10 @@
             display: inline-block;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             padding: 90px 20px;
@@ -66,7 +83,10 @@
             font-size: 18px;
         }
 
-        /* BOTÕES */
+
+        /* =========================
+           BOTÕES
+        ========================= */
 
         .botao {
             display: inline-block;
@@ -78,11 +98,19 @@
             margin-top: 15px;
         }
 
-        /* SECÇÕES */
+
+        /* =========================
+           SECÇÕES
+        ========================= */
 
         section {
             padding: 70px 20px;
         }
+
+
+        /* =========================
+           CATEGORIAS
+        ========================= */
 
         .categorias {
             max-width: 900px;
@@ -96,15 +124,24 @@
             border-radius: 15px;
         }
 
+
+        /* =========================
+           SOBRE
+        ========================= */
+
         .sobre {
             background: #ded0bd;
         }
 
-        /* CONFIGURADOR */
+
+        /* =========================
+           PERSONALIZADOR
+        ========================= */
 
         #personalizados {
             background: #f4eee5;
         }
+
 
         .opcoes {
             display: flex;
@@ -114,6 +151,7 @@
             max-width: 700px;
             margin: 20px auto 40px;
         }
+
 
         .opcoes button {
             background: white;
@@ -127,11 +165,17 @@
             transition: 0.3s;
         }
 
+
         .opcoes button:hover {
             background: #3d3028;
             color: white;
             transform: scale(1.05);
         }
+
+
+        /* =========================
+           RESULTADO
+        ========================= */
 
         .resultado {
             background: white;
@@ -139,1585 +183,551 @@
             margin: 40px auto;
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.12);
         }
 
-         /* PREVIEW 3D - PEÇA ARTESANAL */
+
+        /* =========================
+           PREVIEW
+        ========================= */
 
         #previewBrinco {
-            perspective: 900px;
             min-height: 240px;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
+            perspective: 900px;
         }
 
-        #previewBrinco svg {
-            overflow: visible;
-            transform:
-                rotateY(-12deg)
-                rotateX(6deg)
-                rotateZ(-2deg);
-            transform-style: preserve-3d;
-        
-                transition:
-    transform 0.08s linear,
-    filter 0.2s ease;
-            filter:
-                drop-shadow(10px 14px 7px rgba(0,0,0,0.25));
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background: #3d3028;
+            color: white;
+            padding: 35px 20px;
         }
-
-        #previewBrinco svg:hover {
-            transform:
-                rotateY(14deg)
-                rotateX(-5deg)
-                rotateZ(2deg)
-                scale(1.08);
-
-            filter:
-                drop-shadow(14px 18px 9px rgba(0,0,0,0.30));
-        }
-
-        /* Efeito de material / fio */
-
-        #previewBrinco svg path,
-        #previewBrinco svg circle {
-
-            stroke-width: 9px;
-
-            filter:
-                drop-shadow(3px 3px 2px rgba(0,0,0,0.28))
-                drop-shadow(-2px -2px 2px rgba(255,255,255,0.65));
-
-            animation: brilhoPeca 3s ease-in-out infinite;
-        }
-
-        /* Pequeno brilho de luz */
-
-        @keyframes brilhoPeca {
-
-            0%, 100% {
-                opacity: 0.82;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-        }
-
-        
-
-
-/* RATO */
-
-document.addEventListener("mousedown", function(e) {
-
-    const svg =
-        e.target.closest("#previewBrinco svg");
-
-    if (!svg) return;
-
-    arrastando = true;
-
-    inicioX = e.clientX;
-    inicioY = e.clientY;
-
-});
-
-
-document.addEventListener("mousemove", function(e) {
-
-    if (!arrastando) return;
-
-    const diferencaX =
-        e.clientX - inicioX;
-
-    const diferencaY =
-        e.clientY - inicioY;
-
-    rotacaoY += diferencaX * 0.6;
-    rotacaoX -= diferencaY * 0.4;
-
-    inicioX = e.clientX;
-    inicioY = e.clientY;
-
-    aplicarRotacao();
-
-});
-
-
-document.addEventListener("mouseup", function() {
-
-    arrastando = false;
-
-});
-
-
-/* TELEMÓVEL */
-
-document.addEventListener("touchstart", function(e) {
-
-    const svg =
-        e.target.closest("#previewBrinco svg");
-
-    if (!svg) return;
-
-    arrastando = true;
-
-    inicioX = e.touches[0].clientX;
-    inicioY = e.touches[0].clientY;
-
-}, { passive: true });
-
-
-document.addEventListener("touchmove", function(e) {
-
-    if (!arrastando) return;
-
-    const diferencaX =
-        e.touches[0].clientX - inicioX;
-
-    const diferencaY =
-        e.touches[0].clientY - inicioY;
-
-    rotacaoY += diferencaX * 0.6;
-    rotacaoX -= diferencaY * 0.4;
-
-    inicioX = e.touches[0].clientX;
-    inicioY = e.touches[0].clientY;
-
-    aplicarRotacao();
-
-}, { passive: true });
-
-
-</script>
-    
-/* ============================= */
-/* ARGOLA MANDALA — MODELO 3D */
-/* ============================= */
-
-.earring-3d-wrapper {
-    width: 260px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 900px;
-}
-
-.earring-3d {
-    width: 190px;
-    height: 270px;
-    position: relative;
-    transform-style: preserve-3d;
-    transform:
-        rotateX(5deg)
-        rotateY(-10deg);
-}
-    .earring-3d {
-    --cor-mandala: #8b526d;
-    --cor-mandala-clara: #c58fa3;
-    --cor-mandala-escura: #49333f;
-    }
-/* ARGOLA PRINCIPAL */
-
-.mandala-hoop {
-    position: absolute;
-
-    width: 155px;
-    height: 155px;
-
-    left: 17px;
-    top: 50px;
-
-    border-radius: 50%;
-    box-sizing: border-box;
-
-    /* corpo principal do aro */
-    border: 7px solid var(--cor-mandala);
-
-    background:
-        radial-gradient(
-            circle at 32% 25%,
-            rgba(255,255,255,0.38) 0%,
-            rgba(255,255,255,0.08) 18%,
-            transparent 38%
-        );
-
-    /* profundidade exterior + volume interior */
-    box-shadow:
-        4px 7px 8px rgba(0,0,0,0.32),
-        -2px -2px 4px rgba(255,255,255,0.38),
-        inset 2px 2px 4px rgba(255,255,255,0.35),
-        inset -3px -4px 5px rgba(0,0,0,0.28);
-
-    transform-style: preserve-3d;
-
-    /* ligeira inclinação para parecer objeto físico */
-    transform:
-        rotateX(4deg)
-        rotateY(-7deg);
-}
-    .mandala-hoop::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 5px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(255,255,255,0.32);
-
-    box-shadow:
-        inset 1px 1px 2px rgba(255,255,255,0.35),
-        inset -1px -1px 2px rgba(0,0,0,0.25);
-
-    pointer-events: none;
-
-    transform:
-        translateZ(4px);
-    }
-
-/* ============================= */
-/* CAMADAS DE FIO — MANDALA */
-/* ============================= */
-
-.mandala-cord {
-    position: absolute;
-
-    width: 135px;
-    height: 135px;
-
-    left: 2px;
-    top: 2px;
-
-    border-radius: 50%;
-
-    border: 2px solid transparent;
-
-    pointer-events: none;
-
-    box-sizing: border-box;
-}
-
-/* fio escuro — profundidade */
-
-.cord1 {
-        border-left-color: var(--cor-mandala-escura);
-    border-bottom-color: var(--cor-mandala-escura);
-
-    transform:
-        translateZ(6px)
-        rotate(-18deg);
-
-    opacity: 0.95;
-}
-
-/* fio rosado — camada superior */
-
-.cord2 {
-    border-right-color: var(--cor-mandala);
-    border-top-color: var(--cor-mandala);
-    transform:
-        translateZ(11px)
-        rotate(22deg);
-
-    opacity: 0.9;
-}
-
-/* fio claro — cruzamento */
-
-.cord3 {
-    border-left-color: var(--cor-mandala-clara);
-    border-bottom-color: var(--cor-mandala-clara);
-
-    transform:
-        translateZ(16px)
-        rotate(62deg);
-
-    opacity: 0.85;
-}
-
-/* pequenos brilhos nos fios */
-
-.mandala-cord::after {
-    content: "";
-
-    position: absolute;
-
-    width: 45%;
-    height: 2px;
-
-    top: 8%;
-    left: 12%;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            rgba(255,255,255,0.65),
-            transparent
-        );
-
-    transform: rotate(-25deg);
-
-    opacity: 0.55;
-}
-/* ============================= */
-/* NÓS — MANDALA */
-/* ============================= */
-
-.mandala-knot {
-    position: absolute;
-
-    width: 13px;
-    height: 13px;
-
-    border-radius: 50%;
-
-background:
-    radial-gradient(
-        circle at 30% 25%,
-        var(--cor-mandala-clara) 0%,
-        var(--cor-mandala) 40%,
-        var(--cor-mandala-escura) 75%,
-        #251c1a 100%
-    );
-
-border: 2px solid var(--cor-mandala-escura);
-
-    box-shadow:
-        1px 2px 3px rgba(0,0,0,0.4),
-        inset 1px 1px 2px rgba(255,255,255,0.45);
-
-    transform-style: preserve-3d;
-
-    z-index: 8;
-}
-
-/* distribuição simétrica */
-
-.k1 {
-    top: 13px;
-    left: 49px;
-    transform: translateZ(10px);
-}
-
-.k2 {
-    top: 27px;
-    left: 91px;
-    transform: translateZ(11px);
-}
-
-.k3 {
-    top: 60px;
-    left: 119px;
-    transform: translateZ(12px);
-}
-
-.k4 {
-    top: 101px;
-    left: 119px;
-    transform: translateZ(11px);
-}
-
-.k5 {
-    top: 130px;
-    left: 91px;
-    transform: translateZ(10px);
-}
-
-.k6 {
-    top: 141px;
-    left: 49px;
-    transform: translateZ(11px);
-}
-
-.k7 {
-    top: 130px;
-    left: 19px;
-    transform: translateZ(10px);
-}
-
-.k8 {
-    top: 60px;
-    left: -1px;
-    transform: translateZ(12px);
-    }
-
-/* ============================= */
-/* MISSANGAS — PADRÃO MANDALA */
-/* ============================= */
-
-.mandala-bead {
-    position: absolute;
-
-    width: 8px;
-    height: 8px;
-
-    border-radius: 50%;
-background:
-    radial-gradient(
-        circle at 30% 25%,
-        #ffffff 0%,
-        var(--cor-mandala-clara) 20%,
-        var(--cor-mandala) 55%,
-        var(--cor-mandala-escura) 100%
-    );
-
-    box-shadow:
-        1px 2px 3px rgba(0,0,0,0.45),
-        inset -1px -1px 2px rgba(0,0,0,0.25);
-
-    transform: translateZ(20px);
-
-    z-index: 10;
-}
-
-/* distribuição simétrica ao longo da mandala */
-
-.b1 {
-    top: 17px;
-    left: 53px;
-}
-
-.b2 {
-    top: 31px;
-    left: 94px;
-}
-
-.b3 {
-    top: 61px;
-    left: 119px;
-}
-
-.b4 {
-    top: 101px;
-    left: 119px;
-}
-
-.b5 {
-    top: 128px;
-    left: 94px;
-}
-
-.b6 {
-    top: 139px;
-    left: 53px;
-}
-
-.b7 {
-    top: 128px;
-    left: 27px;
-}
-
-.b8 {
-    top: 61px;
-    left: 2px;
-}
-/* PENDENTE CENTRAL */
-
-.mandala-pendant {
-    position: absolute;
-
-    top: 96px;
-    left: 72px;
-
-    width: 58px;
-    height: 105px;
-
-    transform-style: preserve-3d;
-
-    z-index: 20;
-}
-
-/* FIO QUE LIGA À ARGOLA — FIO ENCERADO */
-
-.pendant-thread {
-    position: absolute;
-
-    width: 4px;
-    height: 30px;
-
-    top: -27px;
-    left: 27px;
-
-    border-radius: 4px;
-
-    background:
-        linear-gradient(
-            to right,
-            #4a3028 0%,
-            #9b6a57 28%,
-            #d4a28d 50%,
-            #805343 72%,
-            #3f2924 100%
-        );
-
-    box-shadow:
-        1px 2px 3px rgba(0,0,0,0.38),
-        inset 1px 0 1px rgba(255,255,255,0.35);
-
-    transform:
-        translateZ(12px)
-        rotate(-1deg);
-
-    transform-style: preserve-3d;
-
-    z-index: 18;
-}
-
-/* PEÇA CENTRAL — PENDENTE ARTESANAL */
-
-.pendant-piece {
-    position: absolute;
-
-    top: 5px;
-    left: 5px;
-
-    width: 45px;
-    height: 65px;
-
-    clip-path: polygon(
-        50% 0%,
-        100% 30%,
-        82% 100%,
-        18% 100%,
-        0% 30%
-    );
-
-    background:
-    linear-gradient(
-        135deg,
-        var(--cor-mandala-clara) 0%,
-        var(--cor-mandala) 25%,
-        var(--cor-mandala-escura) 55%,
-        #241b20 72%,
-        var(--cor-mandala-clara) 100%
-    );
-
-    box-shadow:
-        4px 7px 8px rgba(0,0,0,0.38),
-        -2px -2px 4px rgba(255,255,255,0.3),
-        inset 2px 2px 4px rgba(255,255,255,0.28),
-        inset -3px -4px 5px rgba(0,0,0,0.32);
-
-    transform:
-        rotateX(6deg)
-        rotateY(-5deg)
-        translateZ(14px);
-
-    transform-style: preserve-3d;
-}
-/* INTERIOR DO PENDENTE — DETALHE ARTESANAL */
-
-.pendant-inner {
-    position: absolute;
-
-    inset: 7px;
-
-    border: 2px solid rgba(255,255,255,0.48);
-
-    clip-path: polygon(
-        50% 0%,
-        100% 30%,
-        82% 100%,
-        18% 100%,
-        0% 30%
-    );
-
-background:
-    radial-gradient(
-        circle at 32% 24%,
-        rgba(255,255,255,0.38) 0%,
-        rgba(255,255,255,0.12) 22%,
-        transparent 48%
-    );
-
-box-shadow:
-    inset 2px 2px 4px rgba(255,255,255,0.28),
-    inset -2px -3px 4px rgba(0,0,0,0.35),
-    0 0 4px rgba(255,255,255,0.12);
-
-    box-shadow:
-        inset 2px 2px 4px rgba(255,255,255,0.22),
-        inset -2px -3px 4px rgba(0,0,0,0.32);
-
-    transform:
-        translateZ(5px);
-
-    transform-style: preserve-3d;
-}
-
-/* MISSANGA CENTRAL — EFEITO 3D */
-
-.pendant-bead {
-    position: absolute;
-
-    width: 12px;
-    height: 12px;
-
-    border-radius: 50%;
-
-    top: 24px;
-    left: 21px;
-
-    background:
-    radial-gradient(
-        circle at 28% 22%,
-        #ffffff 0%,
-        var(--cor-mandala-clara) 18%,
-        var(--cor-mandala) 48%,
-        var(--cor-mandala-escura) 78%,
-        #241b20 100%
-    );
-
-    border: 1px solid rgba(60,35,45,0.65);
-
-    box-shadow:
-        2px 3px 4px rgba(0,0,0,0.48),
-        inset 1px 1px 2px rgba(255,255,255,0.5);
-
-    transform:
-        translateZ(25px);
-
-    z-index: 30;
-}
-
-/* GANCHO SUPERIOR — METAL COM VOLUME */
-
-.mandala-hook {
-    position: absolute;
-
-    top: 13px;
-    left: 86px;
-
-    width: 18px;
-    height: 32px;
-
-    border: 3px solid #a8785c;
-    border-bottom: none;
-
-    border-radius: 15px 15px 0 0;
-background:
-    linear-gradient(
-        to right,
-        #4a2f24 0%,
-        #9b6a4f 25%,
-        #e0b08b 43%,
-        #f6d0ad 50%,
-        #b77c5c 65%,
-        #6b402f 82%,
-        #38231d 100%
-    );
-
-    box-shadow:
-        2px 4px 5px rgba(0,0,0,0.32),
-        inset 1px 1px 2px rgba(255,255,255,0.4);
-
-    transform:
-        translateZ(15px)
-        rotate(2deg);
-
-    transform-style: preserve-3d;
-
-    z-index: 25;
-}
-
-/* RODAPÉ */
-
-footer {
-    background: #3d3028;
-    color: white;
-    padding: 35px 20px;
-}
-
 
     </style>
+
 </head>
+
 
 <body>
 
-<header>
 
-    <img src="./logo sem fundo .png"
-         alt="Hand & Soul Artesanato"
-         class="logo">
+    <!-- =========================
+         CABEÇALHO
+    ========================= -->
 
-    <p>Artesanato feito à mão, com alma</p>
+    <header>
 
-    <nav>
+        <img
+            src="./logo sem fundo .png"
+            alt="Hand & Soul Artesanato"
+            class="logo"
+        >
 
-        <a href="#inicio">Início</a>
+        <p>
+            Artesanato feito à mão, com alma
+        </p>
 
-        <a href="#pecas">Peças</a>
 
-        <a href="#sobre">Sobre</a>
+        <nav>
 
-        <a href="#personalizados">Personalizados</a>
+            <a href="#inicio">
+                Início
+            </a>
 
-        <a href="#contactos">Contactos</a>
+            <a href="#pecas">
+                Peças
+            </a>
 
-    </nav>
+            <a href="#sobre">
+                Sobre
+            </a>
 
-    <p>
+            <a href="#personalizados">
+                Personalizados
+            </a>
 
-        🇵🇹 PT |
+            <a href="#contactos">
+                Contactos
+            </a>
 
-        <a href="english.html">🇬🇧 EN</a>
+        </nav>
 
-    </p>
 
-</header>
+        <p>
 
+            🇵🇹 PT |
 
-<!-- INÍCIO -->
-
-<section class="hero" id="inicio">
-
-    <h2>Hand & Soul Artesanato</h2>
-
-    <p>✨ Bem-vindo a este mundo mágico ✨</p>
-
-    <p>
-
-        Peças únicas, criadas à mão e com dedicação,
-        para pessoas que procuram algo diferente,
-        especial e cheio de personalidade.
-
-    </p>
-
-    <a class="botao" href="#pecas">
-
-        Explorar peças
-
-    </a>
-
-</section>
-
-
-<!-- PEÇAS -->
-
-<section id="pecas">
-
-    <h2>As nossas criações</h2>
-
-    <p>
-
-        Cada peça é criada à mão com cuidado,
-        criatividade e muita dedicação.
-
-    </p>
-
-    <div class="categorias">
-
-        <div class="categoria">
-
-            <h3>🪷 Brincos</h3>
-
-            <p>
-                Peças únicas e cheias de personalidade.
-            </p>
-
-        </div>
-
-
-        <div class="categoria">
-
-            <h3>📿 Colares</h3>
-
-            <p>
-                Criações artesanais para completar o teu estilo.
-            </p>
-
-        </div>
-
-
-        <div class="categoria">
-
-            <h3>✨ Pulseiras</h3>
-
-            <p>
-                Detalhes feitos à mão para todos os momentos.
-            </p>
-
-        </div>
-
-
-        <div class="categoria">
-
-            <h3>👜 Malas & Bolsas</h3>
-
-            <p>
-                Peças originais e funcionais.
-            </p>
-
-        </div>
-
-
-        <div class="categoria">
-
-            <h3>👝 Carteiras</h3>
-
-            <p>
-                Pequenas criações feitas com muito cuidado.
-            </p>
-
-        </div>
-
-
-        <div class="categoria">
-
-            <h3>🌙 Peças Personalizadas</h3>
-
-            <p>
-                Criações pensadas especialmente para ti.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- SOBRE -->
-
-<section class="sobre" id="sobre">
-
-    <h2>Feito à mão. Feito com alma.</h2>
-
-    <p>
-
-        Na Hand & Soul acreditamos que cada peça tem uma história.
-
-    </p>
-
-    <p>
-
-        Criamos artesanalmente, fugindo à produção em massa
-        e valorizando a criatividade, a individualidade
-        e o trabalho manual.
-
-    </p>
-
-</section>
-
-
-<!-- PERSONALIZADOR -->
-
-<section id="personalizados">
-
-    <h2>✨ Cria os teus brincos ✨</h2>
-
-    <p>
-
-        Escolhe o formato e a cor e cria uma peça só tua.
-
-    </p>
-
-
-    <h3>1. Escolhe o formato</h3>
-
-    <div class="opcoes">
-
-        <button onclick="escolherFormato('Gota')">
-            💧 Gota
-        </button>
-
-        <button onclick="escolherFormato('Losango')">
-            ♦️ Losango
-        </button>
-
-        <button onclick="escolherFormato('Folha')">
-            🍃 Folha
-        </button>
-
-        <button onclick="escolherFormato('Cobra')">
-            🐍 Cobra
-        </button>
-
-        <button onclick="escolherFormato('Argola')">
-            ⭕ Argola
-        </button>
-        <button onclick="escolherFormato('Argola Mandala')">Argola Mandala</button>
-
-    </div>
-
-
-    <h3>2. Escolhe a cor</h3>
-
-    <div class="opcoes">
-
-        <button onclick="escolherCor('Roxo')">
-            💜 Roxo
-        </button>
-
-        <button onclick="escolherCor('Azul')">
-            💙 Azul
-        </button>
-
-        <button onclick="escolherCor('Verde')">
-            💚 Verde
-        </button>
-
-        <button onclick="escolherCor('Rosa')">
-            🩷 Rosa
-        </button>
-
-        <button onclick="escolherCor('Laranja')">
-            🧡 Laranja
-        </button>
-
-    </div>
-
-
-    <!-- RESULTADO -->
-
-    <div class="resultado">
-
-        <h3>A tua criação</h3>
-
-        <div id="previewBrinco">
-
-            <!-- O brinco aparece aqui -->
-
-        </div>
-
-        <p id="resultado">
-
-            Escolhe um formato e uma cor ✨
+            <a href="english.html">
+                🇬🇧 EN
+            </a>
 
         </p>
 
-    </div>
+    </header>
 
 
-    <a class="botao" href="#contactos">
 
-        💌 Quero encomendar
+    <!-- =========================
+         INÍCIO
+    ========================= -->
 
-    </a>
+    <section
+        class="hero"
+        id="inicio"
+    >
 
-</section>
+        <h2>
+            Hand & Soul Artesanato
+        </h2>
 
 
-<!-- CONTACTOS -->
+        <p>
+            ✨ Bem-vindo a este mundo mágico ✨
+        </p>
 
-<footer id="contactos">
 
-    <h2>Hand & Soul Artesanato</h2>
+        <p>
 
-    <p>
-        Feito à mão • Único • Com alma
-    </p>
+            Peças únicas, criadas à mão e com dedicação,
+            para pessoas que procuram algo diferente,
+            especial e cheio de personalidade.
 
-    <p>
-        Instagram • Facebook
-    </p>
+        </p>
 
-</footer>
 
+        <a
+            class="botao"
+            href="#pecas"
+        >
+            Explorar peças
+        </a>
 
-<script>
+    </section>
 
-let formatoEscolhido = "";
-let corEscolhida = "";
 
 
-function escolherFormato(formato) {
+    <!-- =========================
+         PEÇAS
+    ========================= -->
 
-    formatoEscolhido = formato;
+    <section id="pecas">
 
-    atualizarResultado();
+        <h2>
+            As nossas criações
+        </h2>
 
-}
 
+        <p>
 
-function escolherCor(cor) {
+            Cada peça é criada à mão com cuidado,
+            criatividade e muita dedicação.
 
-    corEscolhida = cor;
+        </p>
 
-    atualizarResultado();
 
-}
+        <div class="categorias">
 
 
-function atualizarResultado() {
+            <div class="categoria">
 
-    const resultado =
-        document.getElementById("resultado");
+                <h3>
+                    🪷 Brincos
+                </h3>
 
-    const preview =
-        document.getElementById("previewBrinco");
-
-
-    if (formatoEscolhido && corEscolhida) {
-
-        resultado.innerHTML =
-            "✨ " +
-            formatoEscolhido +
-            " em " +
-            corEscolhida +
-            " ✨";
-
-
-        if (formatoEscolhido === "Gota") {
-
-    preview.innerHTML = `
-
-        <svg width="160"
-             height="190"
-             viewBox="0 0 160 190">
-
-            <!-- Aro -->
-            <circle
-                cx="80"
-                cy="25"
-                r="10"
-                fill="currentColor"
-                opacity="0.9"/>
-
-            <circle
-                cx="80"
-                cy="25"
-                r="5"
-                fill="#ffffff"
-                opacity="0.45"/>
-
-            <!-- Sombra da gota -->
-            <path
-                d="M82 48
-                   C55 68 55 105 82 153
-                   C109 105 109 68 82 48 Z"
-                fill="rgba(0,0,0,0.25)"
-                transform="translate(6 7)"/>
-
-            <!-- Espessura da gota -->
-<path
-    d="M84 49
-       C52 70 52 109 84 154
-       C116 109 116 70 84 49 Z"
-    fill="currentColor"
-opacity="0.45"
-    transform="translate(5 6)"/>
-
-<!-- Corpo da gota -->
-<path
-    d="M80 45
-       C48 66 48 105 80 150
-       C112 105 112 66 80 45 Z"
-    fill="currentColor"/>
-
-            <!-- Brilho -->
-    
-<path
-    d="M68 68
-       C60 82 61 100 67 112"
-    fill="none"
-    stroke="white"
-    stroke-width="7"
-    stroke-linecap="round"
-    opacity="0.6"
-    filter="drop-shadow(2px 2px 3px rgba(255,255,255,0.5))"/>
-
-        </svg>
-
-    `;
-
-        }
-
-
-        else if (formatoEscolhido === "Losango") {
-
-    preview.innerHTML = `
-
-        <svg width="160"
-             height="190"
-             viewBox="0 0 160 190">
-
-            <!-- Aro -->
-            <circle
-                cx="80"
-                cy="25"
-                r="10"
-                fill="currentColor"
-                opacity="0.9"/>
-
-            <circle
-                cx="80"
-                cy="25"
-                r="5"
-                fill="#ffffff"
-                opacity="0.45"/>
-
-            <!-- Sombra do losango -->
-            <path
-                d="M82 48
-                   L48 96
-                   L82 153
-                   L116 96 Z"
-                fill="rgba(0,0,0,0.25)"
-                transform="translate(6 7)"/>
-
-            <!-- Espessura do losango -->
-<path
-    d="M84 49
-       L50 97
-       L84 154
-       L118 97 Z"
-    fill="currentColor"
-    opacity="0.45"
-    transform="translate(5 6)"/>
-
-<!-- Corpo do losango -->
-<path
-    d="M80 45
-       L46 93
-       L80 150
-       L114 93 Z"
-    fill="currentColor"/>
-
-<!-- Brilho -->
-<path
-    d="M70 68
-       L58 91"
-    fill="none"
-    stroke="white"
-    stroke-width="7"
-    stroke-linecap="round"
-    opacity="0.6"
-    filter="drop-shadow(2px 2px 3px rgba(255,255,255,0.5))"/>
-
-        </svg>
-
-    `;
-
-        }
-
-        else if (formatoEscolhido === "Folha") {
-
-    preview.innerHTML = `
-
-        <svg width="160"
-             height="190"
-             viewBox="0 0 160 190">
-
-            <!-- Aro -->
-            <circle
-                cx="80"
-                cy="25"
-                r="10"
-                fill="currentColor"
-                opacity="0.9"/>
-
-            <circle
-                cx="80"
-                cy="25"
-                r="5"
-                fill="#ffffff"
-                opacity="0.45"/>
-
-            <!-- Sombra da folha -->
-            <path
-                d="M82 150
-                   C45 125 43 78 80 45
-                   C117 78 115 125 82 150 Z"
-                fill="rgba(0,0,0,0.25)"
-                transform="translate(6 7)"/>
-<!-- Espessura da folha -->
-<path
-    d="M84 150
-       C47 125 47 78 84 49
-       C121 78 119 125 84 150 Z"
-    fill="currentColor"
-    opacity="0.45"
-    transform="translate(5 6)"/>
-
-<!-- Corpo da folha -->
-<path
-    d="M80 147
-       C43 122 41 75 80 45
-       C119 75 117 122 80 147 Z"
-    fill="currentColor"/>
-
-<!-- Nervura central -->
-<path
-    d="M80 55
-       C78 80 78 112 80 138"
-    fill="none"
-    stroke="#ffffff"
-    stroke-width="4"
-    stroke-linecap="round"
-    opacity="0.4"/>
-
-<!-- Brilho -->
-<path
-    d="M68 70
-       C60 83 61 98 66 108"
-    fill="none"
-    stroke="white"
-    stroke-width="7"
-    stroke-linecap="round"
-    opacity="0.6"
-    filter="drop-shadow(2px 2px 3px rgba(255,255,255,0.5))"/>
-
-        </svg>
-
-    `;
-
-        }
-
-
-        else if (formatoEscolhido === "Cobra") {
-
-    preview.innerHTML = `
-
-        <svg width="160"
-             height="190"
-             viewBox="0 0 160 190">
-
-            <!-- Aro -->
-            <circle
-                cx="80"
-                cy="25"
-                r="10"
-                fill="currentColor"
-                opacity="0.9"/>
-
-            <circle
-                cx="80"
-                cy="25"
-                r="5"
-                fill="#ffffff"
-                opacity="0.45"/>
-
-            <!-- Sombra da cobra -->
-            <path
-                d="M80 48
-                   C42 68 118 82 80 103
-                   C42 124 118 137 80 158"
-                fill="none"
-                stroke="rgba(0,0,0,0.3)"
-                stroke-width="18"
-                stroke-linecap="round"
-                transform="translate(6 7)"/>
-
-            <!-- Corpo da cobra -->
-            <path
-                d="M80 45
-                   C42 65 118 79 80 100
-                   C42 121 118 134 80 155"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="18"
-                stroke-linecap="round"/>
-
-            <!-- Reflexo -->
-<path
-    d="M76 51
-       C55 65 106 74 83 88
-       C61 101 108 112 83 126"
-    fill="none"
-    stroke="white"
-    stroke-width="5"
-    stroke-linecap="round"
-    opacity="0.6"
-    filter="drop-shadow(2px 2px 3px rgba(255,255,255,0.5))"/>
-
-            <!-- Pequenos detalhes de luz -->
-            <circle
-                cx="62"
-                cy="61"
-                r="3"
-                fill="white"
-                opacity="0.5"/>
-
-            <circle
-                cx="98"
-                cy="79"
-                r="3"
-                fill="white"
-                opacity="0.5"/>
-
-            <circle
-                cx="62"
-                cy="119"
-                r="3"
-                fill="white"
-                opacity="0.5"/>
-
-            <circle
-                cx="98"
-                cy="137"
-                r="3"
-                fill="white"
-                opacity="0.5"/>
-
-        </svg>
-
-    `;
-
-        }
-
-
-        else if (formatoEscolhido === "Argola") {
-
-    preview.innerHTML = `
-
-        <svg width="170"
-             height="190"
-             viewBox="0 0 170 190">
-
-            <!-- Aro superior -->
-            <circle
-                cx="85"
-                cy="25"
-                r="10"
-                fill="currentColor"
-                opacity="0.9"/>
-
-            <circle
-                cx="85"
-                cy="25"
-                r="5"
-                fill="#ffffff"
-                opacity="0.45"/>
-
-            <!-- Espessura da argola -->
-<circle
-    cx="90"
-    cy="106"
-    r="52"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="19"
-    opacity="0.45"/>
-
-<!-- Corpo da argola -->
-<circle
-    cx="85"
-    cy="100"
-    r="52"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="19"/>
-
-            <!-- Reflexo da argola -->
-<path
-    d="M53 72
-       C61 58 76 50 91 50"
-    fill="none"
-    stroke="white"
-    stroke-width="7"
-    stroke-linecap="round"
-    opacity="0.6"
-    filter="drop-shadow(2px 2px 3px rgba(255,255,255,0.5))"/>
-
-            <!-- Pequeno brilho -->
-            <circle
-                cx="52"
-                cy="73"
-                r="4"
-                fill="white"
-                opacity="0.5"/>
-
-        </svg>
-
-    `;
-
-    }
-else if (formatoEscolhido === "Argola Mandala") {
-
-    preview.innerHTML = `
-
-        <div class="earring-3d-wrapper">
-
-            <div class="earring-3d">
-
-                <!-- GANCHO -->
-                <div class="mandala-hook"></div>
-
-                <!-- ARGOLA / MANDALA -->
-                <div class="mandala-hoop">
-
-                    <!-- CAMADAS DE FIO -->
-                    <div class="mandala-cord cord1"></div>
-                    <div class="mandala-cord cord2"></div>
-                    <div class="mandala-cord cord3"></div>
-
-                    <!-- NÓS DA MANDALA -->
-                    <span class="mandala-knot k1"></span>
-                    <span class="mandala-knot k2"></span>
-                    <span class="mandala-knot k3"></span>
-                    <span class="mandala-knot k4"></span>
-                    <span class="mandala-knot k5"></span>
-                    <span class="mandala-knot k6"></span>
-                    <span class="mandala-knot k7"></span>
-                    <span class="mandala-knot k8"></span>
-
-                    <!-- MISSANGAS JUNTO AO ARO -->
-                    <span class="mandala-bead b1"></span>
-                    <span class="mandala-bead b2"></span>
-                    <span class="mandala-bead b3"></span>
-                    <span class="mandala-bead b4"></span>
-                    <span class="mandala-bead b5"></span>
-                    <span class="mandala-bead b6"></span>
-                    <span class="mandala-bead b7"></span>
-                    <span class="mandala-bead b8"></span>
-
-                </div>
-
-                <!-- PENDENTE CENTRAL -->
-                <div class="mandala-pendant">
-
-                    <div class="pendant-thread"></div>
-
-                    <div class="pendant-piece">
-                        <div class="pendant-inner"></div>
-                    </div>
-
-                    <span class="pendant-bead"></span>
-
-                </div>
+                <p>
+                    Peças únicas e cheias de personalidade.
+                </p>
 
             </div>
 
+
+            <div class="categoria">
+
+                <h3>
+                    📿 Colares
+                </h3>
+
+                <p>
+                    Criações artesanais para completar o teu estilo.
+                </p>
+
+            </div>
+
+
+            <div class="categoria">
+
+                <h3>
+                    ✨ Pulseiras
+                </h3>
+
+                <p>
+                    Detalhes feitos à mão para todos os momentos.
+                </p>
+
+            </div>
+
+
+            <div class="categoria">
+
+                <h3>
+                    👜 Malas & Bolsas
+                </h3>
+
+                <p>
+                    Peças originais e funcionais.
+                </p>
+
+            </div>
+
+
+            <div class="categoria">
+
+                <h3>
+                    👝 Carteiras
+                </h3>
+
+                <p>
+                    Pequenas criações feitas com muito cuidado.
+                </p>
+
+            </div>
+
+
+            <div class="categoria">
+
+                <h3>
+                    🌙 Peças Personalizadas
+                </h3>
+
+                <p>
+                    Criações pensadas especialmente para ti.
+                </p>
+
+            </div>
+
+
         </div>
 
-    `;
-
-}     
-
-        
-    
+    </section>
 
 
 
-    /* GIRAR A PEÇA COM O DEDO OU RATO */
+    <!-- =========================
+         SOBRE
+    ========================= -->
 
-let rotacaoX = 8;
-let rotacaoY = -15;
+    <section
+        class="sobre"
+        id="sobre"
+    >
 
-let arrastando = false;
-let inicioX = 0;
-let inicioY = 0;
-
-function aplicarRotacao() {
-
-    const svg =
-    document.querySelector("#previewBrinco svg");
-
-const mandala =
-    document.querySelector("#previewBrinco .earring-3d");
-
-const peca = svg || mandala;
-
-if (!peca) return;
-
-peca.style.transform =
-    `rotateX(${rotacaoX}deg)
-     rotateY(${rotacaoY}deg)`;
-}
+        <h2>
+            Feito à mão. Feito com alma.
+        </h2>
 
 
-/* RATO */
-
-document.addEventListener("mousedown", function(e) {
-
-    const peca =
-    e.target.closest("#previewBrinco svg") ||
-    e.target.closest("#previewBrinco .earring-3d");
-
-if (!peca) return;
-
-    arrastando = true;
-
-    inicioX = e.clientX;
-    inicioY = e.clientY;
-
-});
+        <p>
+            Na Hand & Soul acreditamos que cada peça tem uma história.
+        </p>
 
 
-document.addEventListener("mousemove", function(e) {
+        <p>
 
-    if (!arrastando) return;
+            Criamos artesanalmente, fugindo à produção em massa
+            e valorizando a criatividade, a individualidade
+            e o trabalho manual.
 
-    const diferencaX =
-        e.clientX - inicioX;
+        </p>
 
-    const diferencaY =
-        e.clientY - inicioY;
-
-    rotacaoY += diferencaX * 0.6;
-    rotacaoX -= diferencaY * 0.4;
-
-    inicioX = e.clientX;
-    inicioY = e.clientY;
-
-    aplicarRotacao();
-
-});
+    </section>
 
 
-document.addEventListener("mouseup", function() {
 
-    arrastando = false;
+    <!-- =========================
+         PERSONALIZADOR
+    ========================= -->
 
-});
-
-
-/* TELEMÓVEL */
-
-document.addEventListener("touchstart", function(e) {
-
-const peca =
-    e.target.closest("#previewBrinco svg") ||
-    e.target.closest("#previewBrinco .earring-3d");
-
-if (!peca) return;
-
-    arrastando = true;
-
-    inicioX = e.touches[0].clientX;
-    inicioY = e.touches[0].clientY;
-
-}, { passive: true });
+    <section id="personalizados">
 
 
-document.addEventListener("touchmove", function(e) {
-
-    if (!arrastando) return;
-
-    const diferencaX =
-        e.touches[0].clientX - inicioX;
-
-    const diferencaY =
-        e.touches[0].clientY - inicioY;
-
-    rotacaoY += diferencaX * 0.6;
-    rotacaoX -= diferencaY * 0.4;
-
-    inicioX = e.touches[0].clientX;
-    inicioY = e.touches[0].clientY;
-
-    aplicarRotacao();
-
-}, { passive: true });
+        <h2>
+            ✨ Cria os teus brincos ✨
+        </h2>
 
 
-document.addEventListener("touchend", function() {
+        <p>
 
-    arrastando = false;
+            Escolhe o formato e a cor
+            e cria uma peça só tua.
 
-});
+        </p>
 
-</script>
+
+        <h3>
+            1. Escolhe o formato
+        </h3>
+
+
+        <div class="opcoes">
+
+            <button
+                onclick="escolherFormato('Gota')"
+            >
+                💧 Gota
+            </button>
+
+
+            <button
+                onclick="escolherFormato('Losango')"
+            >
+                ♦️ Losango
+            </button>
+
+
+            <button
+                onclick="escolherFormato('Folha')"
+            >
+                🍃 Folha
+            </button>
+
+
+            <button
+                onclick="escolherFormato('Cobra')"
+            >
+                🐍 Cobra
+            </button>
+
+
+            <button
+                onclick="escolherFormato('Argola')"
+            >
+                ⭕ Argola
+            </button>
+
+
+            <button
+                onclick="escolherFormato('Argola Mandala')"
+            >
+                🪷 Argola Mandala
+            </button>
+
+        </div>
+
+
+
+        <h3>
+            2. Escolhe a cor
+        </h3>
+
+
+        <div class="opcoes">
+
+
+            <button
+                onclick="escolherCor('Roxo')"
+            >
+                💜 Roxo
+            </button>
+
+
+            <button
+                onclick="escolherCor('Azul')"
+            >
+                💙 Azul
+            </button>
+
+
+            <button
+                onclick="escolherCor('Verde')"
+            >
+                💚 Verde
+            </button>
+
+
+            <button
+                onclick="escolherCor('Rosa')"
+            >
+                🩷 Rosa
+            </button>
+
+
+            <button
+                onclick="escolherCor('Laranja')"
+            >
+                🧡 Laranja
+            </button>
+
+
+        </div>
+
+
+
+        <!-- RESULTADO -->
+
+        <div class="resultado">
+
+
+            <h3>
+                A tua criação
+            </h3>
+
+
+            <div id="previewBrinco">
+
+                <!--
+                    OS MODELOS 3D
+                    VÃO ENTRAR AQUI
+                -->
+
+            </div>
+
+
+            <p id="resultado">
+
+                Escolhe um formato e uma cor ✨
+
+            </p>
+
+
+        </div>
+
+
+
+        <a
+            class="botao"
+            href="#contactos"
+        >
+            💌 Quero encomendar
+        </a>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACTOS
+    ========================= -->
+
+    <footer id="contactos">
+
+        <h2>
+            Hand & Soul Artesanato
+        </h2>
+
+
+        <p>
+            Feito à mão • Único • Com alma
+        </p>
+
+
+        <p>
+            Instagram • Facebook
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        let formatoEscolhido = "";
+        let corEscolhida = "";
+
+
+        function escolherFormato(formato) {
+
+            formatoEscolhido = formato;
+
+            atualizarResultado();
+
+        }
+
+
+        function escolherCor(cor) {
+
+            corEscolhida = cor;
+
+            atualizarResultado();
+
+        }
+
+
+        function atualizarResultado() {
+
+            const resultado =
+                document.getElementById("resultado");
+
+            const preview =
+                document.getElementById("previewBrinco");
+
+
+            if (
+                formatoEscolhido &&
+                corEscolhida
+            ) {
+
+                resultado.innerHTML =
+                    "✨ " +
+                    formatoEscolhido +
+                    " em " +
+                    corEscolhida +
+                    " ✨";
+
+
+                /*
+                    MODELOS DOS BRINCOS
+                    SERÃO ADICIONADOS
+                    AQUI, UM DE CADA VEZ.
+                */
+
+                preview.innerHTML = "";
+
+            }
+
+
+            else if (formatoEscolhido) {
+
+                resultado.innerHTML =
+                    "✨ Formato escolhido: " +
+                    formatoEscolhido;
+
+            }
+
+
+            else if (corEscolhida) {
+
+                resultado.innerHTML =
+                    "🎨 Cor escolhida: " +
+                    corEscolhida;
+
+            }
+
+
+            else {
+
+                resultado.innerHTML =
+                    "Escolhe um formato e uma cor ✨";
+
+            }
+
+        }
+
+    </script>
 
 
 </body>
