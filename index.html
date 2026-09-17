@@ -513,6 +513,7 @@ document.addEventListener("touchend", function() {
         <button onclick="escolherFormato('Argola')">
             ⭕ Argola
         </button>
+        <button onclick="escolherFormato('Argola Mandala')">Argola Mandala</button>
 
     </div>
 
@@ -999,7 +1000,67 @@ opacity="0.45"
     `;
 
     }
+else if (formatoEscolhido === "Argola Mandala") {
 
+    preview.innerHTML = `
+
+        <div class="earring-3d-wrapper">
+
+            <div class="earring-3d">
+
+                <!-- ARGOLA PRINCIPAL -->
+                <div class="mandala-hoop">
+
+                    <!-- camadas de linha -->
+                    <div class="mandala-cord cord1"></div>
+                    <div class="mandala-cord cord2"></div>
+                    <div class="mandala-cord cord3"></div>
+
+                    <!-- pequenos nós decorativos -->
+                    <span class="mandala-knot k1"></span>
+                    <span class="mandala-knot k2"></span>
+                    <span class="mandala-knot k3"></span>
+                    <span class="mandala-knot k4"></span>
+                    <span class="mandala-knot k5"></span>
+                    <span class="mandala-knot k6"></span>
+                    <span class="mandala-knot k7"></span>
+                    <span class="mandala-knot k8"></span>
+
+                    <!-- missangas -->
+                    <span class="mandala-bead b1"></span>
+                    <span class="mandala-bead b2"></span>
+                    <span class="mandala-bead b3"></span>
+                    <span class="mandala-bead b4"></span>
+                    <span class="mandala-bead b5"></span>
+                    <span class="mandala-bead b6"></span>
+                    <span class="mandala-bead b7"></span>
+                    <span class="mandala-bead b8"></span>
+
+                </div>
+
+                <!-- PENDENTE CENTRAL -->
+                <div class="mandala-pendant">
+
+                    <div class="pendant-thread"></div>
+
+                    <div class="pendant-piece">
+                        <div class="pendant-inner"></div>
+                    </div>
+
+                    <span class="pendant-bead"></span>
+
+                </div>
+
+                <!-- ARGOLA DE CIMA -->
+                <div class="mandala-hook"></div>
+
+            </div>
+
+        </div>
+
+    `;
+
+    }
 
         preview.style.color =
             obterCor(corEscolhida);
