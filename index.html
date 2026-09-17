@@ -1078,10 +1078,11 @@ peca.style.transform =
 
 document.addEventListener("mousedown", function(e) {
 
-    const svg =
-        e.target.closest("#previewBrinco svg");
+    const peca =
+    e.target.closest("#previewBrinco svg") ||
+    e.target.closest("#previewBrinco .earring-3d");
 
-    if (!svg) return;
+if (!peca) return;
 
     arrastando = true;
 
@@ -1123,10 +1124,11 @@ document.addEventListener("mouseup", function() {
 
 document.addEventListener("touchstart", function(e) {
 
-    const svg =
-        e.target.closest("#previewBrinco svg");
+const peca =
+    e.target.closest("#previewBrinco svg") ||
+    e.target.closest("#previewBrinco .earring-3d");
 
-    if (!svg) return;
+if (!peca) return;
 
     arrastando = true;
 
