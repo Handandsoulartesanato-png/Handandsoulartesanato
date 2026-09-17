@@ -454,14 +454,20 @@
 }
         .gota-brilho {
     position: absolute;
-    width: 18px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.45);
+    width: 16px;
+    height: 55px;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.65),
+        rgba(255, 255, 255, 0)
+    );
     border-radius: 50%;
     top: 18px;
-    left: 20px;
-    transform: rotate(35deg);
+    left: 22px;
+    transform: rotate(32deg);
     filter: blur(2px);
+    pointer-events: none;
         }
     </style>
 
