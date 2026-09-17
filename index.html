@@ -760,31 +760,44 @@ document.addEventListener("touchmove", function(e) {
     z-index: 30;
 }
 
-/* GANCHO SUPERIOR */
+/* GANCHO SUPERIOR — METAL COM VOLUME */
 
 .mandala-hook {
     position: absolute;
 
-    top: 15px;
+    top: 13px;
     left: 86px;
 
     width: 18px;
-    height: 30px;
+    height: 32px;
 
-    border: 3px solid #b48668;
+    border: 3px solid #a8785c;
     border-bottom: none;
 
-    border-radius:
-        15px 15px 0 0;
+    border-radius: 15px 15px 0 0;
+
+    background:
+        linear-gradient(
+            to right,
+            #5a392d 0%,
+            #c99b7b 35%,
+            #f0c7a2 50%,
+            #9a674f 72%,
+            #4b3028 100%
+        );
 
     box-shadow:
-        2px 3px 4px rgba(0,0,0,0.28);
+        2px 4px 5px rgba(0,0,0,0.32),
+        inset 1px 1px 2px rgba(255,255,255,0.4);
 
     transform:
         translateZ(15px)
         rotate(2deg);
-}
 
+    transform-style: preserve-3d;
+
+    z-index: 25;
+}
 
 /* RODAPÉ */
 
