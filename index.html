@@ -693,7 +693,8 @@
    MODELO — GOTA
 ========================= */
 
-if (formatoEscolhido === "Gota") {
+
+    if (formatoEscolhido === "Gota") {
 
     preview.innerHTML = `
 
@@ -741,54 +742,43 @@ if (formatoEscolhido === "Gota") {
             />
 
 
-            <!-- VOLUME / SOMBRA -->
-
-            <path
-                d="
-                    M90 55
-                    C65 58 48 82 48 114
-                    C48 145 67 174 90 193
-                "
-                fill="none"
-                stroke="rgba(255,255,255,0.55)"
-                stroke-width="8"
-                stroke-linecap="round"
-            />
-
-
-            <!-- ZONA ESCURA -->
-
-            <path
-                d="
-                    M128 75
-                    C139 94 140 119 132 141
-                    C124 163 110 181 96 192
-                "
-                fill="none"
-                stroke="rgba(0,0,0,0.22)"
-                stroke-width="9"
-                stroke-linecap="round"
-            />
-
-
             <!-- BRILHO -->
 
-            <ellipse
-                cx="67"
-                cy="85"
-                rx="12"
-                ry="25"
-                fill="white"
-                opacity="0.22"
-                transform="rotate(-25 67 85)"
+            <path
+                d="
+                    M65 75
+                    C53 90 50 108 54 124
+                "
+                fill="none"
+                stroke="white"
+                stroke-width="8"
+                stroke-linecap="round"
+                opacity="0.45"
+            />
+
+
+            <!-- SOMBRA -->
+
+            <path
+                d="
+                    M124 78
+                    C137 100 136 126 126 148
+                    C118 166 106 182 94 192
+                "
+                fill="none"
+                stroke="#000000"
+                stroke-width="8"
+                stroke-linecap="round"
+                opacity="0.18"
             />
 
         </svg>
 
     `;
 
-}
+}            
 
+    
                 preview.innerHTML = "";
 
             }
