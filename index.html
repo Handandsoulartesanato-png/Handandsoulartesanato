@@ -714,31 +714,39 @@ document.addEventListener("touchmove", function(e) {
     transform-style: preserve-3d;
 }
 
-/* MISSANGA CENTRAL */
+/* MISSANGA CENTRAL — EFEITO 3D */
 
 .pendant-bead {
     position: absolute;
 
-    width: 11px;
-    height: 11px;
+    width: 12px;
+    height: 12px;
 
     border-radius: 50%;
 
-    top: 25px;
-    left: 22px;
+    top: 24px;
+    left: 21px;
 
     background:
         radial-gradient(
-            circle at 30% 25%,
-            white,
-            #efd1cc 35%,
-            #9b7775 100%
+            circle at 28% 22%,
+            #ffffff 0%,
+            #f6dce0 18%,
+            #c58fa3 48%,
+            #76515f 78%,
+            #33252b 100%
         );
 
-    box-shadow:
-        1px 3px 4px rgba(0,0,0,0.45);
+    border: 1px solid rgba(60,35,45,0.65);
 
-    transform: translateZ(23px);
+    box-shadow:
+        2px 3px 4px rgba(0,0,0,0.48),
+        inset 1px 1px 2px rgba(255,255,255,0.5);
+
+    transform:
+        translateZ(25px);
+
+    z-index: 30;
 }
 
 /* GANCHO SUPERIOR */
