@@ -401,15 +401,24 @@
     display: flex;
     justify-content: center;
 }
-
 #gota-visual {
     width: 90px;
     height: 120px;
     background: #6d4659;
-    border-radius: 50% 50% 55% 45%;
-    transform: rotate(45deg);
-    box-shadow: 0 8px 18px rgba(80, 50, 40, 0.2);
-        }
+    clip-path: polygon(
+        50% 0%,
+        70% 25%,
+        88% 50%,
+        82% 72%,
+        65% 90%,
+        50% 100%,
+        35% 90%,
+        18% 72%,
+        12% 50%,
+        30% 25%
+    );
+    filter: drop-shadow(0 8px 8px rgba(80, 50, 40, 0.2));
+}
     </style>
 
 </head>
