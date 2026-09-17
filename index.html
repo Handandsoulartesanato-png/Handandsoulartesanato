@@ -1598,7 +1598,54 @@ else if (formatoEscolhido === "Argola Mandala") {
             obterCor(corEscolhida);
 
     }
+function obterCoresMandala(cor) {
 
+    if (cor === "Roxo") {
+        return {
+            base: "#8e44ad",
+            clara: "#c08bd4",
+            escura: "#4b1f5f"
+        };
+    }
+
+    if (cor === "Azul") {
+        return {
+            base: "#3498db",
+            clara: "#8fc9ee",
+            escura: "#174f78"
+        };
+    }
+
+    if (cor === "Verde") {
+        return {
+            base: "#27ae60",
+            clara: "#8cdbab",
+            escura: "#145c35"
+        };
+    }
+
+    if (cor === "Rosa") {
+        return {
+            base: "#e98bb5",
+            clara: "#f6c2d9",
+            escura: "#7b3e5c"
+        };
+    }
+
+    if (cor === "Laranja") {
+        return {
+            base: "#e67e22",
+            clara: "#f5b97d",
+            escura: "#8c4510"
+        };
+    }
+
+    return {
+        base: "#3d3028",
+        clara: "#8f6d5d",
+        escura: "#251914"
+    };
+    }
 
     else if (formatoEscolhido) {
 
