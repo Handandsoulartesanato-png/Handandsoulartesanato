@@ -689,11 +689,105 @@
                     " ✨";
 
 
-                /*
-                    MODELOS DOS BRINCOS
-                    SERÃO ADICIONADOS
-                    AQUI, UM DE CADA VEZ.
-                */
+        /* =========================
+   MODELO — GOTA
+========================= */
+
+if (formatoEscolhido === "Gota") {
+
+    preview.innerHTML = `
+
+        <svg
+            width="180"
+            height="230"
+            viewBox="0 0 180 230"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+
+            <!-- GANCHO -->
+
+            <circle
+                cx="90"
+                cy="22"
+                r="9"
+                fill="${obterCor(corEscolhida)}"
+                stroke="#3d3028"
+                stroke-width="2"
+            />
+
+            <circle
+                cx="90"
+                cy="22"
+                r="4"
+                fill="white"
+                opacity="0.45"
+            />
+
+
+            <!-- CORPO DA GOTA -->
+
+            <path
+                d="
+                    M90 48
+                    C58 48 35 75 35 112
+                    C35 153 60 190 90 210
+                    C120 190 145 153 145 112
+                    C145 75 122 48 90 48
+                    Z
+                "
+                fill="${obterCor(corEscolhida)}"
+                stroke="#3d3028"
+                stroke-width="5"
+            />
+
+
+            <!-- VOLUME / SOMBRA -->
+
+            <path
+                d="
+                    M90 55
+                    C65 58 48 82 48 114
+                    C48 145 67 174 90 193
+                "
+                fill="none"
+                stroke="rgba(255,255,255,0.55)"
+                stroke-width="8"
+                stroke-linecap="round"
+            />
+
+
+            <!-- ZONA ESCURA -->
+
+            <path
+                d="
+                    M128 75
+                    C139 94 140 119 132 141
+                    C124 163 110 181 96 192
+                "
+                fill="none"
+                stroke="rgba(0,0,0,0.22)"
+                stroke-width="9"
+                stroke-linecap="round"
+            />
+
+
+            <!-- BRILHO -->
+
+            <ellipse
+                cx="67"
+                cy="85"
+                rx="12"
+                ry="25"
+                fill="white"
+                opacity="0.22"
+                transform="rotate(-25 67 85)"
+            />
+
+        </svg>
+
+    `;
+
+}
 
                 preview.innerHTML = "";
 
