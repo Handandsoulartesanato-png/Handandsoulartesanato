@@ -293,7 +293,385 @@ document.addEventListener("touchmove", function(e) {
 
 
 </script>
+    
+/* ============================= */
+/* ARGOLA MANDALA — MODELO 3D */
+/* ============================= */
 
+.earring-3d-wrapper {
+    width: 260px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 900px;
+}
+
+.earring-3d {
+    width: 190px;
+    height: 270px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform:
+        rotateX(5deg)
+        rotateY(-10deg);
+}
+
+/* ARGOLA PRINCIPAL */
+
+.mandala-hoop {
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    left: 17px;
+    top: 50px;
+
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    border: 8px solid #8b526d;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 54%,
+            rgba(255,255,255,0.12) 55%,
+            transparent 59%
+        );
+
+    box-shadow:
+        0 7px 10px rgba(0,0,0,0.28),
+        inset 0 2px 3px rgba(255,255,255,0.5);
+
+    transform-style: preserve-3d;
+}
+
+/* CAMADAS DE LINHA */
+
+.mandala-cord {
+    position: absolute;
+    width: 135px;
+    height: 135px;
+    left: 2px;
+    top: 2px;
+
+    border-radius: 50%;
+    border: 3px solid transparent;
+
+    pointer-events: none;
+}
+
+.cord1 {
+    border-left-color: #34251f;
+    border-bottom-color: #34251f;
+    transform: translateZ(5px);
+}
+
+.cord2 {
+    border-right-color: #b57b9c;
+    border-top-color: #b57b9c;
+
+    transform:
+        translateZ(8px)
+        rotate(25deg);
+}
+
+.cord3 {
+    border-left-color: #71818d;
+    border-bottom-color: #71818d;
+
+    transform:
+        translateZ(11px)
+        rotate(48deg);
+}
+
+/* NÓS */
+
+.mandala-knot {
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 8px 13px 8px 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c08aa6,
+            #49333f 55%,
+            #251c1a
+        );
+
+    border: 3px solid #33251f;
+
+    box-shadow:
+        2px 3px 4px rgba(0,0,0,0.35),
+        inset 1px 1px 2px rgba(255,255,255,0.4);
+
+    transform-style: preserve-3d;
+}
+
+.k1 {
+    top: 8px;
+    left: 20px;
+    transform: rotate(30deg) translateZ(8px);
+}
+
+.k2 {
+    top: 35px;
+    right: 4px;
+    transform: rotate(60deg) translateZ(9px);
+}
+
+.k3 {
+    top: 72px;
+    right: -3px;
+    transform: rotate(20deg) translateZ(10px);
+}
+
+.k4 {
+    bottom: 30px;
+    right: 6px;
+    transform: rotate(55deg) translateZ(8px);
+}
+
+.k5 {
+    bottom: 5px;
+    right: 38px;
+    transform: rotate(20deg) translateZ(9px);
+}
+
+.k6 {
+    bottom: 0;
+    left: 63px;
+    transform: rotate(65deg) translateZ(10px);
+}
+
+.k7 {
+    bottom: 8px;
+    left: 25px;
+    transform: rotate(35deg) translateZ(8px);
+}
+
+.k8 {
+    top: 38px;
+    left: 0;
+    transform: rotate(50deg) translateZ(8px);
+}
+
+/* MISSANGAS */
+
+.mandala-bead {
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff 0%,
+            #f7ddd9 18%,
+            #d9b6b4 55%,
+            #8f6c70 100%
+        );
+
+    box-shadow:
+        1px 2px 4px rgba(0,0,0,0.45);
+
+    transform: translateZ(18px);
+}
+
+.b1 {
+    top: 28px;
+    left: 42px;
+}
+
+.b2 {
+    top: 65px;
+    right: 26px;
+}
+
+.b3 {
+    bottom: 32px;
+    right: 35px;
+}
+
+.b4 {
+    bottom: 20px;
+    left: 58px;
+}
+
+.b5 {
+    bottom: 48px;
+    left: 20px;
+}
+
+.b6 {
+    top: 70px;
+    left: 22px;
+}
+
+.b7 {
+    top: 18px;
+    right: 43px;
+}
+
+.b8 {
+    bottom: 62px;
+    right: 10px;
+}
+
+/* PENDENTE CENTRAL */
+
+.mandala-pendant {
+    position: absolute;
+
+    top: 96px;
+    left: 72px;
+
+    width: 58px;
+    height: 105px;
+
+    transform-style: preserve-3d;
+
+    z-index: 20;
+}
+
+/* FIO QUE LIGA À ARGOLA */
+
+.pendant-thread {
+    position: absolute;
+
+    width: 3px;
+    height: 28px;
+
+    top: -25px;
+    left: 27px;
+
+    background:
+        linear-gradient(
+            to right,
+            #6d4738,
+            #d2a27d,
+            #704838
+        );
+
+    box-shadow:
+        1px 2px 3px rgba(0,0,0,0.3);
+
+    transform: translateZ(12px);
+}
+
+/* PEÇA CENTRAL */
+
+.pendant-piece {
+    position: absolute;
+
+    top: 5px;
+    left: 5px;
+
+    width: 45px;
+    height: 65px;
+
+    clip-path: polygon(
+        50% 0%,
+        100% 30%,
+        82% 100%,
+        18% 100%,
+        0% 30%
+    );
+
+    background:
+        linear-gradient(
+            135deg,
+            #bd87a5 0%,
+            #604050 38%,
+            #302421 55%,
+            #74838e 100%
+        );
+
+    box-shadow:
+        4px 6px 7px rgba(0,0,0,0.35);
+
+    transform:
+        rotateX(5deg)
+        translateZ(14px);
+}
+
+.pendant-inner {
+    position: absolute;
+
+    inset: 8px;
+
+    border: 3px solid rgba(255,255,255,0.45);
+
+    clip-path: polygon(
+        50% 0%,
+        100% 30%,
+        82% 100%,
+        18% 100%,
+        0% 30%
+    );
+
+    box-shadow:
+        inset 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* MISSANGA CENTRAL */
+
+.pendant-bead {
+    position: absolute;
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    top: 25px;
+    left: 22px;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            white,
+            #efd1cc 35%,
+            #9b7775 100%
+        );
+
+    box-shadow:
+        1px 3px 4px rgba(0,0,0,0.45);
+
+    transform: translateZ(23px);
+}
+
+/* GANCHO SUPERIOR */
+
+.mandala-hook {
+    position: absolute;
+
+    top: 15px;
+    left: 86px;
+
+    width: 18px;
+    height: 30px;
+
+    border: 3px solid #b48668;
+    border-bottom: none;
+
+    border-radius:
+        15px 15px 0 0;
+
+    box-shadow:
+        2px 3px 4px rgba(0,0,0,0.28);
+
+    transform:
+        translateZ(15px)
+        rotate(2deg);
+}
 <style>
 
 /* RODAPÉ */
