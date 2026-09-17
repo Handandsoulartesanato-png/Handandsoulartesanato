@@ -1134,6 +1134,47 @@ function selecionarModelo(modelo) {
     }
 
     }
+    let rodando = false;
+let inicioX = 0;
+let rotacaoY = -8;
+
+const gota3D = document.getElementById("gota-visual");
+
+gota3D.addEventListener("pointerdown", function(event) {
+
+    rodando = true;
+    inicioX = event.clientX;
+
+    gota3D.setPointerCapture(event.pointerId);
+
+});
+
+gota3D.addEventListener("pointermove", function(event) {
+
+    if (!rodando) return;
+
+    const movimento = event.clientX - inicioX;
+
+    rotacaoY += movimento * 0.5;
+
+    gota3D.style.transform =
+        "perspective(500px) rotateY(" + rotacaoY + "deg)";
+
+    inicioX = event.clientX;
+
+});
+
+gota3D.addEventListener("pointerup", function() {
+
+    rodando = false;
+
+});
+
+gota3D.addEventListener("pointercancel", function() {
+
+    rodando = false;
+
+});
 </script>
 
 </body>
