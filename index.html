@@ -1105,6 +1105,25 @@ function selecionarModelo(modelo) {
     botao.classList.add("selecionado");
 
     }
+    function escolherAcabamento(acabamento, botao) {
+
+    const gota = document.getElementById("gota-visual");
+
+    const botoes = document.querySelectorAll(".acabamentos button");
+
+    botoes.forEach(function(botao) {
+        botao.classList.remove("selecionado");
+    });
+
+    botao.classList.add("selecionado");
+
+    if (acabamento === "mate") {
+        gota.classList.add("acabamento-mate");
+    } else {
+        gota.classList.remove("acabamento-mate");
+    }
+
+    }
 </script>
 
 </body>
