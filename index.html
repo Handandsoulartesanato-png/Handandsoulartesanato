@@ -316,34 +316,44 @@ document.addEventListener("touchmove", function(e) {
         rotateX(5deg)
         rotateY(-10deg);
 }
-
 /* ARGOLA PRINCIPAL */
 
 .mandala-hoop {
     position: absolute;
+
     width: 155px;
     height: 155px;
+
     left: 17px;
     top: 50px;
 
     border-radius: 50%;
     box-sizing: border-box;
 
-    border: 8px solid #8b526d;
+    /* corpo principal do aro */
+    border: 7px solid #8b526d;
 
     background:
         radial-gradient(
-            circle,
-            transparent 54%,
-            rgba(255,255,255,0.12) 55%,
-            transparent 59%
+            circle at 32% 25%,
+            rgba(255,255,255,0.38) 0%,
+            rgba(255,255,255,0.08) 18%,
+            transparent 38%
         );
 
+    /* profundidade exterior + volume interior */
     box-shadow:
-        0 7px 10px rgba(0,0,0,0.28),
-        inset 0 2px 3px rgba(255,255,255,0.5);
+        4px 7px 8px rgba(0,0,0,0.32),
+        -2px -2px 4px rgba(255,255,255,0.38),
+        inset 2px 2px 4px rgba(255,255,255,0.35),
+        inset -3px -4px 5px rgba(0,0,0,0.28);
 
     transform-style: preserve-3d;
+
+    /* ligeira inclinação para parecer objeto físico */
+    transform:
+        rotateX(4deg)
+        rotateY(-7deg);
 }
 
 /* ============================= */
