@@ -613,29 +613,40 @@ document.addEventListener("touchmove", function(e) {
     z-index: 20;
 }
 
-/* FIO QUE LIGA À ARGOLA */
+/* FIO QUE LIGA À ARGOLA — FIO ENCERADO */
 
 .pendant-thread {
     position: absolute;
 
-    width: 3px;
-    height: 28px;
+    width: 4px;
+    height: 30px;
 
-    top: -25px;
+    top: -27px;
     left: 27px;
+
+    border-radius: 4px;
 
     background:
         linear-gradient(
             to right,
-            #6d4738,
-            #d2a27d,
-            #704838
+            #4a3028 0%,
+            #9b6a57 28%,
+            #d4a28d 50%,
+            #805343 72%,
+            #3f2924 100%
         );
 
     box-shadow:
-        1px 2px 3px rgba(0,0,0,0.3);
+        1px 2px 3px rgba(0,0,0,0.38),
+        inset 1px 0 1px rgba(255,255,255,0.35);
 
-    transform: translateZ(12px);
+    transform:
+        translateZ(12px)
+        rotate(-1deg);
+
+    transform-style: preserve-3d;
+
+    z-index: 18;
 }
 
 /* PEÇA CENTRAL — PENDENTE ARTESANAL */
