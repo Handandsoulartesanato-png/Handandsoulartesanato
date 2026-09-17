@@ -346,43 +346,93 @@ document.addEventListener("touchmove", function(e) {
     transform-style: preserve-3d;
 }
 
-/* CAMADAS DE LINHA */
+/* ============================= */
+/* CAMADAS DE FIO — MANDALA */
+/* ============================= */
 
 .mandala-cord {
     position: absolute;
+
     width: 135px;
     height: 135px;
+
     left: 2px;
     top: 2px;
 
     border-radius: 50%;
-    border: 3px solid transparent;
+
+    border: 2px solid transparent;
 
     pointer-events: none;
+
+    box-sizing: border-box;
 }
+
+/* fio escuro — profundidade */
 
 .cord1 {
     border-left-color: #34251f;
     border-bottom-color: #34251f;
-    transform: translateZ(5px);
+
+    transform:
+        translateZ(6px)
+        rotate(-18deg);
+
+    opacity: 0.95;
 }
+
+/* fio rosado — camada superior */
 
 .cord2 {
     border-right-color: #b57b9c;
     border-top-color: #b57b9c;
 
     transform:
-        translateZ(8px)
-        rotate(25deg);
+        translateZ(11px)
+        rotate(22deg);
+
+    opacity: 0.9;
 }
 
+/* fio claro — cruzamento */
+
 .cord3 {
-    border-left-color: #71818d;
-    border-bottom-color: #71818d;
+    border-left-color: #c5aeb9;
+    border-bottom-color: #c5aeb9;
 
     transform:
-        translateZ(11px)
-        rotate(48deg);
+        translateZ(16px)
+        rotate(62deg);
+
+    opacity: 0.85;
+}
+
+/* pequenos brilhos nos fios */
+
+.mandala-cord::after {
+    content: "";
+
+    position: absolute;
+
+    width: 45%;
+    height: 2px;
+
+    top: 8%;
+    left: 12%;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(255,255,255,0.65),
+            transparent
+        );
+
+    transform: rotate(-25deg);
+
+    opacity: 0.55;
 }
 
 /* NÓS */
