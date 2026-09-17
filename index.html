@@ -1059,13 +1059,18 @@ let inicioY = 0;
 function aplicarRotacao() {
 
     const svg =
-        document.querySelector("#previewBrinco svg");
+    document.querySelector("#previewBrinco svg");
 
-    if (!svg) return;
+const mandala =
+    document.querySelector("#previewBrinco .earring-3d");
 
-    svg.style.transform =
-        `rotateX(${rotacaoX}deg)
-         rotateY(${rotacaoY}deg)`;
+const peca = svg || mandala;
+
+if (!peca) return;
+
+peca.style.transform =
+    `rotateX(${rotacaoX}deg)
+     rotateY(${rotacaoY}deg)`;
 }
 
 
