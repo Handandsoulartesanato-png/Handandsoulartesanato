@@ -900,6 +900,14 @@ function selecionarModelo(modelo) {
     document.getElementById("cor-escolhida").textContent =
         "Cor selecionada: " + cor;
 
+    const cores = document.querySelectorAll(".cor");
+
+    cores.forEach(function(botao) {
+        botao.classList.remove("selecionada");
+    });
+
+    event.target.classList.add("selecionada");
+
     }
 </script>
 
