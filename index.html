@@ -806,7 +806,11 @@ function mostrarBrincos() {
 }
 function selecionarModelo(modelo) {
 
-    alert("Escolheste: " + modelo);
+    if (modelo === "Gota") {
+
+        document.getElementById("personalizacao-gota").style.display = "block";
+
+    }
 
 }
 </script>
