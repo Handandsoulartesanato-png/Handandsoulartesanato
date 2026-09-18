@@ -1667,7 +1667,25 @@ folha3D.addEventListener(
                 0.22,
                 Math.abs(Math.cos(angulo))
             );
+        folha3D.style.filter =
+    "brightness(" +
+    (0.82 + profundidade * 0.18) +
+    ") saturate(" +
+    (0.9 + profundidade * 0.1) +
+    ")";
+const brilhoFolha =
+    folha3D.querySelector(".folha-brilho");
 
+const posicaoBrilho =
+    50 + Math.sin(angulo) * 30;
+
+brilhoFolha.style.left =
+    posicaoBrilho + "%";
+
+brilhoFolha.style.transform =
+    "rotate(32deg) scaleX(" +
+    profundidade +
+    ")";
         folha3D.style.transform =
             "perspective(500px) rotateY(" +
             folhaRotacaoY +
