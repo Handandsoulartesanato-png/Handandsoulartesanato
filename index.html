@@ -1537,6 +1537,21 @@
         </button>
     </div>
 </div>
+ <div class="opcao-personalizacao">
+    <h4>
+        Escolhe o acabamento
+    </h4>
+
+    <div class="acabamentos">
+        <button onclick="escolherAcabamentoLosango('brilhante', this)">
+            ✨ Brilhante
+        </button>
+
+        <button onclick="escolherAcabamentoLosango('mate', this)">
+            🌙 Mate
+        </button>
+    </div>
+</div>   
 </div>
 
 
@@ -1799,6 +1814,53 @@ function selecionarModelo(modelo) {
         "color-mix(in srgb, " +
         cor +
         " 60%, black) 100%)";
+}
+    function escolherTamanhoLosango(largura, altura, botao) {
+
+    const losango =
+        document.querySelector(".losango-visual");
+
+    losango.style.width =
+        largura + "px";
+
+    losango.style.height =
+        altura + "px";
+
+    const botoes =
+        botao.parentElement.querySelectorAll("button");
+
+    botoes.forEach(function(botaoTamanho) {
+        botaoTamanho.classList.remove("selecionado");
+    });
+
+    botao.classList.add("selecionado");
+}
+    function escolherAcabamentoLosango(acabamento, botao) {
+
+    const losango =
+        document.querySelector(".losango-visual");
+
+    const botoes =
+        botao.parentElement.querySelectorAll("button");
+
+    botoes.forEach(function(botaoAcabamento) {
+        botaoAcabamento.classList.remove("selecionado");
+    });
+
+    botao.classList.add("selecionado");
+
+    if (acabamento === "mate") {
+
+        losango.style.filter =
+            "saturate(0.85) brightness(0.92)";
+
+    } else {
+
+        losango.style.filter =
+            "saturate(1) brightness(1)";
+
+    }
+
 }
     function escolherTamanho(largura, altura, botao) {
 
