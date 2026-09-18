@@ -831,6 +831,101 @@
 
     transition: opacity 0.15s ease;
 }
+        .losango-preview {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.losango-brinco {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.losango-gancho {
+    width: 18px;
+    height: 28px;
+    border: 4px solid #c9a96e;
+    border-bottom: none;
+    border-radius: 14px 14px 0 0;
+    margin-bottom: -2px;
+    background: linear-gradient(
+        90deg,
+        #9f7a3f 0%,
+        #f4d58c 35%,
+        #c9a96e 60%,
+        #8d6a36 100%
+    );
+    box-shadow:
+        0 2px 4px rgba(50, 30, 30, 0.25);
+}
+
+.losango-argola {
+    width: 10px;
+    height: 10px;
+    border: 3px solid #c9a96e;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    background: linear-gradient(
+        135deg,
+        #f4d58c 0%,
+        #c9a96e 45%,
+        #8d6a36 100%
+    );
+    box-shadow:
+        0 2px 3px rgba(50, 30, 30, 0.25);
+}
+
+.losango-visual {
+    width: 100px;
+    height: 130px;
+    position: relative;
+    touch-action: none;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff55 0%,
+        #6d4659 35%,
+        #3f2935 100%
+    );
+
+    clip-path: polygon(
+        50% 0%,
+        88% 50%,
+        50% 100%,
+        12% 50%
+    );
+
+    transform:
+        perspective(500px)
+        rotateY(-8deg);
+
+    box-shadow:
+        10px 12px 14px rgba(50, 30, 30, 0.28),
+        inset -8px -10px 12px rgba(0, 0, 0, 0.22);
+}
+
+.losango-brilho {
+    position: absolute;
+    width: 18px;
+    height: 75px;
+    top: 18%;
+    left: 22%;
+
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.55),
+        rgba(255, 255, 255, 0)
+    );
+
+    border-radius: 50%;
+    transform: rotate(32deg);
+    filter: blur(3px);
+    pointer-events: none;
+}
     </style>
 
 </head>
@@ -1368,6 +1463,24 @@
     <p>
         Escolhe os detalhes da tua peça.
     </p>
+
+    <div class="losango-preview">
+
+        <div class="losango-brinco">
+
+            <div class="losango-gancho"></div>
+
+            <div class="losango-argola"></div>
+
+            <div class="losango-visual">
+
+                <div class="losango-brilho"></div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
