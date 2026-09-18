@@ -1946,6 +1946,107 @@ folha3D.addEventListener(
 
     }
 );
+    let losangoRodando = false;
+let losangoInicioX = 0;
+let losangoRotacaoY = -8;
+
+const losango3D =
+    document.querySelector(".losango-visual");
+
+const losangoBrinco3D =
+    document.querySelector(".losango-brinco");
+
+losango3D.addEventListener(
+    "pointerdown",
+    function(event) {
+
+        losangoRodando = true;
+        losangoInicioX = event.clientX;
+
+        losango3D.setPointerCapture(
+            event.pointerId
+        );
+
+    }
+);
+
+losango3D.addEventListener(
+    "pointermove",
+    function(event) {
+
+        if (!losangoRodando) return;
+
+        const movimento =
+            event.clientX - losangoInicioX;
+
+        losangoRotacaoY += movimento * 0.5;
+
+        const angulo =
+            losangoRotacaoY * Math.PI / 180;
+
+        const profundidade =
+            Math.max(
+                0.22,
+                Math.abs(Math.cos(angulo))
+            );
+
+        losango3D.style.transform =
+            "perspective(500px) rotateY(" +
+            losangoRotacaoY +
+            "deg) scaleX(" +
+            profundidade +
+            ")";
+
+        losangoBrinco3D.style.transform =
+            "perspective(500px) rotateY(" +
+            (losangoRotacaoY * 0.35) +
+            "deg)";
+
+        losango3D.style.filter =
+            "brightness(" +
+            (0.82 + profundidade * 0.18) +
+            ") saturate(" +
+            (0.9 + profundidade * 0.1) +
+            ")";
+
+        const brilhoLosango =
+            losango3D.querySelector(
+                ".losango-brilho"
+            );
+
+        const posicaoBrilho =
+            50 + Math.sin(angulo) * 30;
+
+        brilhoLosango.style.left =
+            posicaoBrilho + "%";
+
+        brilhoLosango.style.transform =
+            "rotate(32deg) scaleX(" +
+            profundidade +
+            ")";
+
+        losangoInicioX = event.clientX;
+
+    }
+);
+
+losango3D.addEventListener(
+    "pointerup",
+    function() {
+
+        losangoRodando = false;
+
+    }
+);
+
+losango3D.addEventListener(
+    "pointercancel",
+    function() {
+
+        losangoRodando = false;
+
+    }
+);
 </script>
 
 </body>
