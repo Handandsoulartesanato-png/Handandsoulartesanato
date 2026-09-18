@@ -1201,6 +1201,15 @@ const posicaoBrilho =
 
 brilho.style.left =
     posicaoBrilho + "%";
+const lateral = gota3D;
+
+const intensidadeLateral =
+    Math.max(0, 1 - profundidade) * 0.9;
+
+lateral.style.setProperty(
+    "--lateral-opacidade",
+    intensidadeLateral
+);
 
     inicioX = event.clientX;
 
