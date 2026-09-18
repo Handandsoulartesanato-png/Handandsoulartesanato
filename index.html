@@ -674,6 +674,7 @@
     width: 95px;
     height: 125px;
     position: relative;
+    touch-action: none;
 
   background: linear-gradient(
     135deg,
@@ -1626,6 +1627,76 @@ gota3D.addEventListener("pointercancel", function() {
     rodando = false;
 
 });
+    let folhaRodando = false;
+let folhaInicioX = 0;
+let folhaRotacaoY = 8;
+
+const folha3D =
+    document.querySelector(".folha-visual");
+
+folha3D.addEventListener(
+    "pointerdown",
+    function(event) {
+
+        folhaRodando = true;
+        folhaInicioX = event.clientX;
+
+        folha3D.setPointerCapture(
+            event.pointerId
+        );
+
+    }
+);
+
+folha3D.addEventListener(
+    "pointermove",
+    function(event) {
+
+        if (!folhaRodando) return;
+
+        const movimento =
+            event.clientX - folhaInicioX;
+
+        folhaRotacaoY += movimento * 0.5;
+
+        const angulo =
+            folhaRotacaoY * Math.PI / 180;
+
+        const profundidade =
+            Math.max(
+                0.22,
+                Math.abs(Math.cos(angulo))
+            );
+
+        folha3D.style.transform =
+            "perspective(500px) rotateY(" +
+            folhaRotacaoY +
+            "deg) scaleX(" +
+            profundidade +
+            ")";
+
+        folhaInicioX = event.clientX;
+
+    }
+);
+
+folha3D.addEventListener(
+    "pointerup",
+    function() {
+
+        folhaRodando = false;
+
+    }
+);
+
+folha3D.addEventListener(
+    "pointercancel",
+    function() {
+
+        folhaRodando = false;
+
+    }
+);
 </script>
 
 </body>
