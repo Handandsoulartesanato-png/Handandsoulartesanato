@@ -749,6 +749,29 @@
 
     pointer-events: none;
 }
+        .folha-lateral {
+    position: absolute;
+
+    top: 3%;
+    right: -6px;
+
+    width: 12px;
+    height: 94%;
+
+    background: linear-gradient(
+        to right,
+        rgba(40, 25, 30, 0.15),
+        rgba(40, 25, 30, 0.45)
+    );
+
+    clip-path: inherit;
+
+    opacity: var(--folha-lateral-opacidade, 0);
+
+    pointer-events: none;
+
+    transition: opacity 0.15s ease;
+}
     </style>
 
 </head>
@@ -1264,6 +1287,7 @@
 
     <div class="folha-nervura"></div>
        <div class="folha-brilho"></div>
+       <div class="folha-lateral"></div>
 
 </div>
 
@@ -1633,6 +1657,8 @@ let folhaRotacaoY = 8;
 
 const folha3D =
     document.querySelector(".folha-visual");
+    const folhaBrinco3D =
+    document.querySelector(".folha-brinco");
 
 folha3D.addEventListener(
     "pointerdown",
@@ -1673,6 +1699,13 @@ folha3D.addEventListener(
     ") saturate(" +
     (0.9 + profundidade * 0.1) +
     ")";
+        const intensidadeLateral =
+    Math.max(0, 1 - profundidade) * 0.9;
+
+folha3D.style.setProperty(
+    "--folha-lateral-opacidade",
+    intensidadeLateral
+);
 const brilhoFolha =
     folha3D.querySelector(".folha-brilho");
 
@@ -1692,7 +1725,10 @@ brilhoFolha.style.transform =
             "deg) scaleX(" +
             profundidade +
             ")";
-
+folhaBrinco3D.style.transform =
+    "perspective(500px) rotateY(" +
+    (folhaRotacaoY * 0.35) +
+    "deg)";
         folhaInicioX = event.clientX;
 
     }
