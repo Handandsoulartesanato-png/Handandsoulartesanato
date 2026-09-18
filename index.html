@@ -1585,6 +1585,28 @@ function selecionarModelo(modelo) {
     document.getElementById("gota-visual").style.background = cor;        
     
     }
+    function escolherCorFolha(cor, botao) {
+
+    const folha = document.querySelector(".folha-visual");
+
+    const botoes = botao
+        .parentElement
+        .querySelectorAll(".cor");
+
+    botoes.forEach(function(botaoCor) {
+        botaoCor.classList.remove("selecionada");
+    });
+
+    botao.classList.add("selecionada");
+
+    folha.style.background =
+        "linear-gradient(135deg, #ffffff55 0%, " +
+        cor +
+        " 35%, " +
+        "color-mix(in srgb, " +
+        cor +
+        " 60%, black) 100%)";
+}
     function escolherTamanho(largura, altura, botao) {
 
     const gota = document.getElementById("gota-visual");
