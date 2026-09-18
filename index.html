@@ -1760,6 +1760,28 @@ function selecionarModelo(modelo) {
         cor +
         " 60%, black) 100%)";
 }
+    function escolherCorLosango(cor, botao) {
+
+    const losango =
+        document.querySelector(".losango-visual");
+
+    const botoes =
+        botao.parentElement.querySelectorAll(".cor");
+
+    botoes.forEach(function(botaoCor) {
+        botaoCor.classList.remove("selecionada");
+    });
+
+    botao.classList.add("selecionada");
+
+    losango.style.background =
+        "linear-gradient(135deg, #ffffff55 0%, " +
+        cor +
+        " 35%, " +
+        "color-mix(in srgb, " +
+        cor +
+        " 60%, black) 100%)";
+}
     function escolherTamanho(largura, altura, botao) {
 
     const gota = document.getElementById("gota-visual");
