@@ -926,6 +926,28 @@
     filter: blur(3px);
     pointer-events: none;
 }
+        .losango-visual::after {
+    content: "";
+    position: absolute;
+    top: 3%;
+    right: -6px;
+    width: 12px;
+    height: 94%;
+
+    background: linear-gradient(
+        to right,
+        rgba(40, 25, 30, 0.15),
+        rgba(40, 25, 30, 0.45)
+    );
+
+    clip-path: inherit;
+
+    opacity: var(--losango-lateral-opacidade, 0);
+
+    pointer-events: none;
+
+    transition: opacity 0.15s ease;
+}
     </style>
 
 </head>
@@ -2147,6 +2169,13 @@ losango3D.addEventListener(
             ") saturate(" +
             (0.9 + profundidade * 0.1) +
             ")";
+        const intensidadeLateral =
+    Math.max(0, 1 - profundidade) * 0.9;
+
+losango3D.style.setProperty(
+    "--losango-lateral-opacidade",
+    intensidadeLateral
+);
 
         const brilhoLosango =
             losango3D.querySelector(
