@@ -735,6 +735,55 @@
 
     pointer-events: none;
 }
+        .folha-visual::before {
+    content: "";
+    position: absolute;
+
+    top: 18%;
+    left: 50%;
+
+    width: 2px;
+    height: 35%;
+
+    background: rgba(255, 255, 255, 0.28);
+
+    transform-origin: bottom center;
+
+    transform: rotate(55deg);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 22px 0 rgba(255, 255, 255, 0.22),
+        0 44px 0 rgba(255, 255, 255, 0.16);
+
+    pointer-events: none;
+}
+
+.folha-visual::after {
+    content: "";
+    position: absolute;
+
+    top: 18%;
+    left: 50%;
+
+    width: 2px;
+    height: 35%;
+
+    background: rgba(255, 255, 255, 0.28);
+
+    transform-origin: bottom center;
+
+    transform: rotate(-55deg);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 22px 0 rgba(255, 255, 255, 0.22),
+        0 44px 0 rgba(255, 255, 255, 0.16);
+
+    pointer-events: none;
+}
         .folha-brilho {
     position: absolute;
 
