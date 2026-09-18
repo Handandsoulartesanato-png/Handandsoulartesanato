@@ -1177,6 +1177,13 @@ gota3D.style.filter =
     ") saturate(" +
     (0.9 + profundidade * 0.1) +
     ")";
+const brilho = gota3D.querySelector(".gota-brilho");
+
+const posicaoBrilho =
+    50 + Math.sin(angulo) * 30;
+
+brilho.style.left =
+    posicaoBrilho + "%";
 
     inicioX = event.clientX;
 
