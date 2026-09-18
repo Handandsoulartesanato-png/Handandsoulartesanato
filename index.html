@@ -675,7 +675,12 @@
     height: 125px;
     position: relative;
 
-    background: #6d4659;
+  background: linear-gradient(
+    135deg,
+    #ffffff55 0%,
+    #6d4659 35%,
+    #4a303d 100%
+);
 
     clip-path: polygon(
         50% 0%,
@@ -695,7 +700,8 @@
     transform: rotate(8deg);
 
     box-shadow:
-        8px 10px 12px rgba(50, 30, 30, 0.25);
+    10px 12px 14px rgba(50, 30, 30, 0.28),
+    inset -7px -8px 10px rgba(0, 0, 0, 0.20);
 }
         .folha-nervura {
     position: absolute;
@@ -715,6 +721,30 @@
     transform: translateX(-50%) rotate(8deg);
 
     border-radius: 50%;
+
+    pointer-events: none;
+}
+        .folha-brilho {
+    position: absolute;
+
+    width: 18px;
+    height: 75px;
+
+    top: 15%;
+    left: 22%;
+
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.45),
+        rgba(255, 255, 255, 0)
+    );
+
+    border-radius: 50%;
+
+    transform: rotate(32deg);
+
+    filter: blur(3px);
 
     pointer-events: none;
 }
@@ -1232,6 +1262,7 @@
    <div class="folha-visual">
 
     <div class="folha-nervura"></div>
+       <div class="folha-brilho"></div>
 
 </div>
 
