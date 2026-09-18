@@ -697,6 +697,27 @@
     box-shadow:
         8px 10px 12px rgba(50, 30, 30, 0.25);
 }
+        .folha-nervura {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+
+    width: 3px;
+    height: 82%;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.55),
+        rgba(255, 255, 255, 0.15),
+        rgba(40, 25, 30, 0.35)
+    );
+
+    transform: translateX(-50%) rotate(8deg);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
     </style>
 
 </head>
