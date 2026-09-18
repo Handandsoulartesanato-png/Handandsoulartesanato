@@ -619,6 +619,46 @@
     opacity: 0.7;
     pointer-events: none;
 }
+        .folha-preview {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.folha-brinco {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.folha-visual {
+    width: 95px;
+    height: 125px;
+    position: relative;
+
+    background: #6d4659;
+
+    clip-path: polygon(
+        50% 0%,
+        68% 18%,
+        82% 38%,
+        88% 58%,
+        78% 76%,
+        62% 90%,
+        50% 100%,
+        38% 90%,
+        22% 76%,
+        12% 58%,
+        18% 38%,
+        32% 18%
+    );
+
+    transform: rotate(8deg);
+
+    box-shadow:
+        8px 10px 12px rgba(50, 30, 30, 0.25);
+}
     </style>
 
 </head>
