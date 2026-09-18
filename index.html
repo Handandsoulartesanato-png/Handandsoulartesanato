@@ -530,6 +530,23 @@
     filter: blur(2px);
     pointer-events: none;
         }
+#gota-visual::after {
+    content: "";
+    position: absolute;
+    top: 3%;
+    right: -6px;
+    width: 12px;
+    height: 94%;
+    background: linear-gradient(
+        to right,
+        rgba(40, 25, 30, 0.15),
+        rgba(40, 25, 30, 0.45)
+    );
+    clip-path: inherit;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
     </style>
 
 </head>
