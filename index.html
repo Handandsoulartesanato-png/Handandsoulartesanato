@@ -1239,7 +1239,12 @@ lateral.style.setProperty(
     "--lateral-opacidade",
     intensidadeLateral
 );
+const sombraDinamica =
+    6 + (1 - profundidade) * 10;
 
+gota3D.style.boxShadow =
+    sombraDinamica + "px 10px 12px rgba(50, 30, 30, 0.25), " +
+    "inset -6px -8px 10px rgba(0, 0, 0, 0.18)";
     inicioX = event.clientX;
 
 });
