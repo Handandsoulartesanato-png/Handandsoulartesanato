@@ -1533,41 +1533,44 @@ function mostrarBrincos() {
 }
 function selecionarModelo(modelo) {
 
+    const modelos = [
+        "personalizacao-gota",
+        "personalizacao-folha",
+        "personalizacao-losango",
+        "personalizacao-cobra",
+        "personalizacao-argola",
+        "personalizacao-argola-mandala"
+    ];
+
+    modelos.forEach(function(id) {
+        document.getElementById(id).style.display = "none";
+    });
+
     if (modelo === "Gota") {
-
         document.getElementById("personalizacao-gota").style.display = "block";
-
     }
 
     if (modelo === "Folha") {
-
         document.getElementById("personalizacao-folha").style.display = "block";
-
     }
 
     if (modelo === "Losango") {
-
         document.getElementById("personalizacao-losango").style.display = "block";
-
     }
 
     if (modelo === "Cobra") {
-
         document.getElementById("personalizacao-cobra").style.display = "block";
-
     }
 
     if (modelo === "Argola") {
-
         document.getElementById("personalizacao-argola").style.display = "block";
-
     }
 
     if (modelo === "Argola Mandala") {
-
         document.getElementById("personalizacao-argola-mandala").style.display = "block";
-
     }
+
+}
 
 }
     function escolherCor(cor) {
