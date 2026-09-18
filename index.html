@@ -1212,8 +1212,11 @@ gota3D.style.transform =
     "deg) scaleX(" +
     profundidade +
     ")";
+
 brinco3D.style.transform =
-    "rotateY(" + rotacaoY + "deg)";
+    "perspective(500px) rotateY(" +
+    (rotacaoY * 0.35) +
+    "deg)";
 gota3D.style.filter =
     "brightness(" +
     (0.82 + profundidade * 0.18) +
