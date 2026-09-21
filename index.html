@@ -1013,7 +1013,7 @@
             #3f2935 100%
         );
 
-    border-radius: 45% 55% 50% 50%;
+    border-radius: 48% 52% 42% 58%;
 
     transform:
         perspective(500px)
@@ -1093,21 +1093,27 @@
 
 .cobra-brilho {
     position: absolute;
-    width: 14px;
-    height: 75px;
-    top: 18%;
-    left: 20%;
 
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0.55),
-        rgba(255, 255, 255, 0)
-    );
+    width: 12px;
+    height: 85%;
+
+    top: 8%;
+    left: 24%;
+
+    background:
+        repeating-linear-gradient(
+            160deg,
+            rgba(255, 255, 255, 0.05) 0px,
+            rgba(255, 255, 255, 0.05) 3px,
+            rgba(255, 255, 255, 0) 3px,
+            rgba(255, 255, 255, 0) 8px
+        );
 
     border-radius: 50%;
-    transform: rotate(25deg);
-    filter: blur(3px);
+
+    transform: rotate(18deg);
+
+    opacity: 0.9;
 
     pointer-events: none;
 }
