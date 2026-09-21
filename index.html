@@ -1000,8 +1000,8 @@
 }
 
 .cobra-visual {
-    width: 58px;
-    height: 145px;
+  width: 62px;
+height: 145px;
     position: relative;
     touch-action: none;
 
@@ -1013,15 +1013,17 @@
             #3f2935 100%
         );
 
-    border-radius: 48% 52% 42% 58%;
+   border-radius: 52% 48% 58% 42%;
 
     transform:
-        perspective(500px)
-        rotateY(-8deg);
+    perspective(500px)
+    rotateY(-8deg)
+    rotateZ(4deg);
 
-    box-shadow:
-        10px 12px 14px rgba(50, 30, 30, 0.28),
-        inset -8px -10px 12px rgba(0, 0, 0, 0.22);
+   box-shadow:
+    10px 12px 14px rgba(50, 30, 30, 0.28),
+    inset -10px -12px 14px rgba(0, 0, 0, 0.28),
+    inset 5px 4px 8px rgba(255, 255, 255, 0.08);
 }
 .cobra-visual::before {
     content: "";
@@ -1035,13 +1037,15 @@
 
     background:
         repeating-linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.16) 0px,
-            rgba(255, 255, 255, 0.16) 2px,
-            rgba(255, 255, 255, 0) 2px,
-            rgba(255, 255, 255, 0) 7px
-        );
+    135deg,
+    rgba(255, 255, 255, 0.20) 0px,
+    rgba(255, 255, 255, 0.20) 2px,
+    rgba(40, 25, 30, 0.08) 2px,
+    rgba(40, 25, 30, 0.08) 4px,
+    rgba(255, 255, 255, 0) 4px,
+    rgba(255, 255, 255, 0) 8px
 
+);
     opacity: 0.65;
     border-radius: 45% 55% 50% 50%;
 
@@ -1123,8 +1127,8 @@
     top: -5%;
     left: 50%;
 
-    width: 34px;
-    height: 30px;
+    width: 38px;
+height: 31px;
 
     transform:
         translateX(-50%)
