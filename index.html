@@ -1012,46 +1012,9 @@
         #3f2935 100%
     );
 
-   clip-path: polygon(
-    40% 0%,
-    60% 0%,
-    68% 5%,
-    70% 11%,
-    66% 17%,
-    58% 22%,
-    50% 27%,
-    48% 33%,
-    53% 39%,
-    62% 44%,
-    70% 50%,
-    70% 56%,
-    65% 62%,
-    57% 67%,
-    50% 72%,
-    48% 78%,
-    53% 84%,
-    62% 89%,
-    66% 94%,
-    60% 100%,
-    40% 100%,
-    34% 94%,
-    38% 89%,
-    47% 84%,
-    52% 78%,
-    50% 72%,
-    43% 67%,
-    35% 62%,
-    30% 56%,
-    30% 50%,
-    38% 44%,
-    47% 39%,
-    52% 33%,
-    50% 27%,
-    42% 22%,
-    34% 17%,
-    30% 11%,
-    32% 5%
-);
+
+  clip-path: ellipse(42% 50% at 50% 50%);
+    border-radius: 50%;
     transform:
         perspective(500px)
         rotateY(-8deg);
@@ -1083,6 +1046,47 @@
 
     pointer-events: none;
 }
+        .cobra-visual::after {
+    content: "";
+    position: absolute;
+
+    top: 8%;
+    left: 18%;
+
+    width: 64%;
+    height: 84%;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0),
+            rgba(255,255,255,0.16),
+            rgba(40,25,30,0.18),
+            rgba(40,25,30,0)
+        );
+
+    transform: rotate(18deg);
+
+    filter: blur(3px);
+
+    pointer-events: none;
+}
+        .cobra-visual {
+    background-image:
+        radial-gradient(
+            ellipse at 50% 20%,
+            rgba(255, 255, 255, 0.12) 0%,
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff55 0%,
+            #6d4659 35%,
+            #3f2935 100%
+        );
+}
 
 .cobra-brilho {
     position: absolute;
@@ -1103,6 +1107,60 @@
     filter: blur(3px);
 
     pointer-events: none;
+}
+        .cobra-cabeca {
+    position: absolute;
+
+    top: -2%;
+    left: 50%;
+
+    width: 28px;
+    height: 34px;
+
+    transform:
+        translateX(-50%)
+        rotate(8deg);
+
+    background: linear-gradient(
+        135deg,
+        #ffffff55 0%,
+        #6d4659 35%,
+        #3f2935 100%
+    );
+
+    border-radius:
+        48% 48% 42% 42%;
+
+    box-shadow:
+        4px 5px 8px rgba(50, 30, 30, 0.25),
+        inset -4px -5px 7px rgba(0, 0, 0, 0.18);
+
+    z-index: 2;
+}
+        .cobra-olho {
+    position: absolute;
+
+    top: 28%;
+
+    width: 5px;
+    height: 7px;
+
+    background: #211820;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 3px rgba(255, 255, 255, 0.35);
+
+    z-index: 3;
+}
+
+.cobra-olho-esquerdo {
+    left: 23%;
+}
+
+.cobra-olho-direito {
+    right: 23%;
 }
     </style>
 
@@ -1755,6 +1813,10 @@
             <div class="cobra-argola"></div>
 
             <div class="cobra-visual">
+            <div class="cobra-cabeca">
+    <span class="cobra-olho cobra-olho-esquerdo"></span>
+    <span class="cobra-olho cobra-olho-direito"></span>
+</div>
                 <div class="cobra-brilho"></div>
             </div>
         </div>
