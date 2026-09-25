@@ -210,7 +210,86 @@
     cursor: pointer;
     transition: 0.3s;
 }
+.personalizacao-simples {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 38px 30px;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #fffaf7 100%
+        );
+    border-radius: 28px;
+    border: 1px solid #eaded7;
+    box-shadow:
+        0 12px 30px rgba(80, 50, 40, 0.08);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
 
+.personalizacao-simples::before {
+    content: "✦";
+    position: absolute;
+    top: 18px;
+    left: 25px;
+    color: #d8b56a;
+    font-size: 18px;
+    opacity: 0.65;
+}
+
+.personalizacao-simples::after {
+    content: "✦";
+    position: absolute;
+    bottom: 18px;
+    right: 25px;
+    color: #d89aaa;
+    font-size: 15px;
+    opacity: 0.55;
+}
+
+.personalizacao-simples h3 {
+    color: #6d4659;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.personalizacao-simples p {
+    max-width: 520px;
+    margin: 0 auto 25px;
+    color: #6b5b54;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.personalizacao-simples textarea {
+    width: 100%;
+    min-height: 135px;
+    box-sizing: border-box;
+    padding: 18px 20px;
+    border: 1px solid #e5d6cf;
+    border-radius: 20px;
+    background: #fffdfb;
+    color: #3d3028;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    outline: none;
+    transition: 0.25s;
+}
+
+.personalizacao-simples textarea:focus {
+    border-color: #6d4659;
+    box-shadow:
+        0 0 0 4px rgba(109, 70, 89, 0.08);
+    background: white;
+}
+
+.personalizacao-simples textarea::placeholder {
+    color: #a4938b;
+}
 .botao-personalizar:hover {
     transform: translateY(-2px);
     opacity: 0.9;
