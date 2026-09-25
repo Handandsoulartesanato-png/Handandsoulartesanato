@@ -2228,6 +2228,22 @@ function mostrarBrincos() {
     document.getElementById("opcoes-brincos").style.display = "block";
 
 }
+    function mostrarPersonalizacaoSimples(tipo) {
+
+    const secoes = [
+        "personalizacao-colares"
+    ];
+
+    secoes.forEach(function(id) {
+        document.getElementById(id).style.display = "none";
+    });
+
+    if (tipo === "colares") {
+        document.getElementById(
+            "personalizacao-colares"
+        ).style.display = "block";
+    }
+}
 function selecionarModelo(modelo) {
 
     const modelos = [
