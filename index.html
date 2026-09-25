@@ -1611,7 +1611,9 @@ transform-origin: 50% 0%;
         <div class="tipos-peca">
 
             <button onclick="mostrarBrincos()">🪷 Brincos</button>
-            <button>📿 Colares</button>
+            <button onclick="mostrarPersonalizacaoSimples('colares')">
+    📿 Colares
+</button>
             <button>✨ Pulseiras</button>
             <button>💍 Anéis</button>
             <button>👜 Malas</button>
@@ -1653,6 +1655,26 @@ transform-origin: 50% 0%;
 
 </div>
     </div>
+            <div
+    id="personalizacao-colares"
+    class="personalizacao-simples"
+    style="display: none;"
+>
+    <h3>
+        📿 Cria o teu Colar
+    </h3>
+
+    <p>
+        Conta-nos como imaginas a tua peça:
+        cores, tamanho, materiais ou qualquer outro detalhe.
+    </p>
+
+    <textarea
+        id="observacoes-colares"
+        rows="5"
+        placeholder="Escreve aqui a tua ideia..."
+    ></textarea>
+</div>
 <div
     id="personalizacao-gota"
     class="personalizacao-modelo"
