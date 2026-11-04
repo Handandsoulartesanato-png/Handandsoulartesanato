@@ -2356,7 +2356,31 @@ Tens uma ideia diferente, gostavas de combinar modelos ou acrescentar algum deta
 
     </footer>
 <script>
+function enviarIdeia() {
 
+    const observacoes = document.getElementById("observacoes").value.trim();
+
+    if (observacoes === "") {
+        alert("Conta-nos primeiro a tua ideia! 💭");
+        return;
+    }
+
+    const email = "handandsoulartesanato@gmail.com";
+
+    const assunto = encodeURIComponent("Nova ideia de personalização ✨");
+
+    const mensagem = encodeURIComponent(
+        "Olá, Hand & Soul! ❤️\n\n" +
+        "Gostava de partilhar convosco a seguinte ideia:\n\n" +
+        observacoes +
+        "\n\nObrigada!"
+    );
+
+    window.location.href =
+        "mailto:" + email +
+        "?subject=" + assunto +
+        "&body=" + mensagem;
+    }
 function mostrarBrincos() {
 
     document.getElementById(
