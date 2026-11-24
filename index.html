@@ -205,45 +205,224 @@
             font-size: 14px;
         }
 
-        /* GALERIA */
+        <!-- GALERIA -->
 
-        .galeria {
-            background: var(--fundo-claro);
+<section class="galeria" id="galeria">
+
+    <h2 class="titulo-seccao">
+        Um pouco do nosso universo 🤎
+    </h2>
+
+    <p class="section-intro">
+        Cada criação tem a sua própria história.
+        Espreita algumas das nossas peças artesanais.
+    </p>
+
+    <div class="galeria-pecas">
+
+        <img src="2122d612-e72e-43a1-8d0f-b2fef9ecb504.jpeg" alt="Criação artesanal Hand & Soul">
+
+        <img src="26a2747b-3301-454f-8864-f6b7a20cc6d9.jpeg" alt="Criação artesanal Hand & Soul">
+
+        <img src="3CBA9D00-7AAA-4E2F-861C-4F456A996570.png" alt="Criação artesanal Hand & Soul">
+
+        <img src="5b12b8d8-2d43-4808-98b2-9c20477de342.jpeg" alt="Criação artesanal Hand & Soul">
+
+        <img src="5ffdbc09-0f39-4422-b354-24b86c7c8db1.jpeg" alt="Criação artesanal Hand & Soul">
+
+        <img src="9542B2BE-2B9D-4D62-B01D-18E901602EE3.jpeg" alt="Criação artesanal Hand & Soul">
+
+        <img src="9be0c417-84b6-4e2d-9dd6-f6ef13073a57.jpeg" alt="Criação artesanal Hand & Soul">
+
+        <img src="B89254F1-B67F-41D1-B3DF-4BC2AB180C79.jpeg" alt="Criação artesanal Hand & Soul">
+
+        <img src="IMG_5962.jpeg" alt="Criação artesanal Hand & Soul">
+
+        <img src="IMG_5991.jpeg" alt="Criação artesanal Hand & Soul">
+
+        <img src="IMG_6342.jpeg" alt="Criação artesanal Hand & Soul">
+
+    </div>
+
+</section>
+
+
+<!-- SOBRE NÓS -->
+
+<section class="sobre" id="sobre">
+
+    <div class="sobre-conteudo">
+
+        <h2 class="titulo-seccao">
+            Sobre nós 🤎
+        </h2>
+
+        <p>
+            A Hand & Soul nasceu da vontade de criar
+            peças únicas, feitas à mão e com significado.
+        </p>
+
+        <p>
+            Acreditamos na beleza do trabalho artesanal,
+            na criatividade e na liberdade de expressão.
+            Cada peça é uma oportunidade de transformar
+            ideias em algo especial.
+        </p>
+
+        <p>
+            Valorizamos a individualidade, a criação
+            consciente e o carinho colocado em cada detalhe.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PERSONALIZAÇÃO -->
+
+<section class="personaliza" id="personaliza">
+
+    <div class="personaliza-conteudo">
+
+        <h2 class="titulo-seccao">
+            Cria algo único connosco ✨
+        </h2>
+
+        <p class="section-intro">
+            Tens uma ideia especial? Gostavas de combinar
+            modelos, escolher cores ou criar uma peça
+            totalmente tua? Conta-nos o que imaginaste!
+        </p>
+
+        <div class="caixa-ideia">
+
+            <h3>
+                A tua ideia 💭
+            </h3>
+
+            <p>
+                Partilha connosco a tua inspiração
+                e vamos dar-lhe vida!
+            </p>
+
+            <textarea
+                id="observacoes"
+                placeholder="Escreve aqui a tua ideia..."
+                rows="5"
+            ></textarea>
+
+            <button
+                type="button"
+                class="botao"
+                onclick="enviarIdeia()"
+            >
+                Enviar a minha ideia 💌
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTOS -->
+
+<section class="contactos" id="contactos">
+
+    <h2 class="titulo-seccao">
+        Vamos criar algo especial?
+    </h2>
+
+    <p>
+        Para dúvidas, encomendas ou ideias,
+        entra em contacto connosco.
+    </p>
+
+    <div class="contactos-links">
+
+        <a href="mailto:handandsoulartesanato@gmail.com">
+            Email
+        </a>
+
+        <a
+            href="https://www.instagram.com/hand_and_soul_artesanato/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Instagram
+        </a>
+
+        <a
+            href="https://www.tiktok.com/@hand_and_soul_artesanato"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            TikTok
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- RODAPÉ -->
+
+<footer>
+
+    <p>Hand & Soul Artesanato</p>
+
+    <p class="slogan">
+        Made by hand. Made with soul.
+    </p>
+
+    <p>
+        © 2026 Hand & Soul Artesanato
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+    function enviarIdeia() {
+
+        const campo =
+            document.getElementById("observacoes");
+
+        const observacoes = campo.value.trim();
+
+        if (observacoes === "") {
+            alert("Conta-nos primeiro a tua ideia! 💭");
+            return;
         }
 
-        .galeria-pecas {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-            max-width: 1150px;
-            margin: 0 auto;
-        }
+        const email = "handandsoulartesanato@gmail.com";
 
-        .galeria-pecas img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: contain;
-            background: var(--fundo);
-            padding: 8px;
-            border: 1px solid var(--bege);
-            transition: transform 0.25s;
-        }
+        const assunto = encodeURIComponent(
+            "Nova ideia de personalização ✨"
+        );
 
-        .galeria-pecas img:hover {
-            transform: scale(1.025);
-        }
+        const mensagem = encodeURIComponent(
+            "Olá, Hand & Soul! ❤️\n\n" +
+            "Gostava de partilhar convosco a seguinte ideia:\n\n" +
+            observacoes +
+            "\n\nObrigada!"
+        );
 
-        /* SOBRE NÓS */
+        window.location.href =
+            "mailto:" + email +
+            "?subject=" + assunto +
+            "&body=" + mensagem;
 
-        .sobre {
-            background: var(--bege);
-            text-align: center;
-        }
+    }
 
-        .sobre-conteudo {
-            max-width: 750px;
-            margin: 0 auto;
-        }
+</script>
 
-        .sobre p {
-            color: var(--castanho-suave
+</body>
+</html>
