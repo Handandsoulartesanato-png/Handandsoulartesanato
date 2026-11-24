@@ -165,45 +165,69 @@
             font-size: 16px;
         }
 
-        /* CATEGORIAS */
-
-        .categorias {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .categoria {
-            background: var(--fundo-claro);
-            padding: 30px 20px;
-            text-align: center;
-            border: 1px solid var(--bege);
-            transition: transform 0.25s;
-        }
-
-        .categoria:hover {
-            transform: translateY(-4px);
-        }
-
-        .categoria span {
-            display: block;
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .categoria strong {
-            display: block;
-            font-size: 18px;
-            font-weight: normal;
-            margin-bottom: 8px;
-        }
-
         .categoria p {
-            color: var(--castanho-suave);
-            font-size: 14px;
-        }
+    color: var(--castanho-suave);
+    font-size: 14px;
+}
+
+/* GALERIA */
+
+.galeria {
+    background: var(--fundo-claro);
+}
+
+.galeria-pecas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.galeria-pecas img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: var(--fundo);
+    padding: 8px;
+    border: 1px solid var(--bege);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+    .galeria-pecas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="#inicio">
+        <div class="logo">Hand & Soul</div>
+    </a>
+
+    <p class="slogan">
+        Made by hand. Made with soul.
+    </p>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#pecas">Peças</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#personaliza">Personaliza</a>
+    </nav>
+
+</header>
+
+<main>
 
         <!-- GALERIA -->
 
